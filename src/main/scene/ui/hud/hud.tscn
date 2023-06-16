@@ -61,6 +61,7 @@ visible = false
 layout_mode = 2
 
 [node name="virtual_joystick" type="Control" parent="."]
+visible = false
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 2
