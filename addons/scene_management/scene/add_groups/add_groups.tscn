@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://l3pi31q1qbbm"]
+
+[ext_resource type="Script" path="res://addons/scene_management/scene/add_groups/add_groups.gd" id="1_3p4p1"]
+
+[node name="add_groups" type="MarginContainer"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 442.0
+offset_bottom = 264.0
+script = ExtResource("1_3p4p1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="group_items" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="group_line_edit" type="LineEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+placeholder_text = "group_name"
+select_all_on_focus = true
+
+[node name="add_items" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Add"
+
+[connection signal="text_submitted" from="VBoxContainer/group_line_edit" to="." method="_on_group_line_edit_text_submitted"]
+[connection signal="pressed" from="VBoxContainer/add_items" to="." method="_on_add_items_pressed"]

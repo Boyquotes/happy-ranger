@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbtne2qyl6x30"]
+
+[ext_resource type="Script" path="res://addons/apprentice/node/panel_border.gd" id="1_684nm"]
+[ext_resource type="Script" path="res://src/main/scene/ui/hud/player_message/player_message.gd" id="1_oo7o0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xacho"]
+bg_color = Color(0.211765, 0.207843, 0.156863, 0.572549)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.27451, 0.27451, 0.27451, 1)
+
+[node name="player_message" type="MarginContainer"]
+editor_description = "角色聊天信息显示框"
+offset_right = 128.0
+offset_bottom = 80.0
+script = ExtResource("1_oo7o0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xacho")
+
+[node name="PanelBorder" type="Node" parent="Panel"]
+script = ExtResource("1_684nm")
+border_color = Color(0.27451, 0.27451, 0.27451, 1)
+back_color = Color(0.211765, 0.207843, 0.156863, 0.572549)
+border_width = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+clip_contents = false
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="item_container" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 10

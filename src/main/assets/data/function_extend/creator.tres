@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CreatorFunction" load_steps=2 format=3 uid="uid://dr8tf7i63k5v"]
+
+[ext_resource type="Script" path="res://src/main/assets/data/function_extend/creator.gd" id="1_28i2c"]
+
+[resource]
+script = ExtResource("1_28i2c")
+create_position = Vector2(0, 0)
+rotation = 0.0
+_target = NodePath("")
+target_point = Vector2(0, 0)
+name = ""
+description = ""
+delay_time = 0.0
+duration = 0.0
+showed = true

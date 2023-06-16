@@ -1,0 +1,274 @@
+[gd_scene load_steps=14 format=3 uid="uid://ch26o82fwubmv"]
+
+[ext_resource type="FontFile" uid="uid://dtm7nsxkwk6ov" path="res://src/main/assets/font/VonwaonBitmap-16px.ttf" id="1_qtd3r"]
+[ext_resource type="Script" path="res://src/main/scene/ui/hud/cards/card/card.gd" id="2_kxrha"]
+[ext_resource type="Script" path="res://addons/apprentice/node/panel_border.gd" id="3_stmfp"]
+[ext_resource type="PackedScene" uid="uid://carri1sawswfw" path="res://src/main/scene/ui/hud/cards/card/property_item/property_item.tscn" id="4_c2nt7"]
+[ext_resource type="Texture2D" uid="uid://bqguppxev3cbl" path="res://src/main/assets/texture/ui/icon007.png" id="5_niljs"]
+[ext_resource type="Texture2D" uid="uid://drpwanb8q2pf" path="res://src/main/assets/texture/ui/icon001.png" id="6_478qg"]
+[ext_resource type="Texture2D" uid="uid://bq5cwktns2s3q" path="res://src/main/assets/texture/ui/icon006.png" id="7_qxme3"]
+[ext_resource type="Texture2D" uid="uid://b7bumws8gfou" path="res://src/main/assets/texture/ui/coin.png" id="8_3cc8g"]
+[ext_resource type="Script" path="res://addons/apprentice/node/control/control_hover_border.gd" id="9_4nw3e"]
+[ext_resource type="Script" path="res://addons/apprentice/node/control/control_click_border.gd" id="10_o5vr1"]
+
+[sub_resource type="Theme" id="Theme_ycyfo"]
+default_font = ExtResource("1_qtd3r")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3goy"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_6hucl"]
+default_font = ExtResource("1_qtd3r")
+default_font_size = 6
+
+[node name="card" type="MarginContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(160, 234)
+offset_right = 160.0
+offset_bottom = 234.0
+pivot_offset = Vector2(80, 16)
+mouse_filter = 0
+theme = SubResource("Theme_ycyfo")
+script = ExtResource("2_kxrha")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.0862745, 0.0941176, 0.105882, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="MarginContainer"]
+layout_mode = 2
+border_color = Color(0.32549, 0.368627, 0.4, 0.360784)
+editor_only = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="head" type="VBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="HSeparator" type="Control" parent="VBoxContainer/head"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/head"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/head/MarginContainer2"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+color = Color(0.698039, 0.847059, 0.968627, 0.0666667)
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/head/MarginContainer2"]
+layout_mode = 2
+
+[node name="image" type="TextureRect" parent="VBoxContainer/head/MarginContainer2/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ReferenceRect" type="ReferenceRect" parent="VBoxContainer/head/MarginContainer2"]
+layout_mode = 2
+border_color = Color(0, 0, 0, 0.329412)
+editor_only = false
+
+[node name="Control" type="Control" parent="VBoxContainer/head"]
+custom_minimum_size = Vector2(20, 8)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/head"]
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="item_name_label" type="Label" parent="VBoxContainer/head/MarginContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.666667)
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "物品"
+horizontal_alignment = 1
+
+[node name="desc" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/desc"]
+layout_mode = 2
+
+[node name="line" type="Panel" parent="VBoxContainer/desc/VBoxContainer"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d3goy")
+
+[node name="PanelBorder" type="Node" parent="VBoxContainer/desc/VBoxContainer/line"]
+script = ExtResource("3_stmfp")
+border_width = 0
+corner_radius = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/desc/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_lock_ = true
+
+[node name="description" type="RichTextLabel" parent="VBoxContainer/desc/VBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "用于描述物品的功能性或其他提示信息"
+
+[node name="line2" type="Panel" parent="VBoxContainer/desc/VBoxContainer"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d3goy")
+metadata/_edit_lock_ = true
+
+[node name="PanelBorder" type="Node" parent="VBoxContainer/desc/VBoxContainer/line2"]
+script = ExtResource("3_stmfp")
+border_width = 0
+corner_radius = 2
+
+[node name="property" type="MarginContainer" parent="VBoxContainer/desc/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HFlowContainer" type="HBoxContainer" parent="VBoxContainer/desc/VBoxContainer/property"]
+layout_mode = 2
+theme = SubResource("Theme_6hucl")
+alignment = 1
+
+[node name="item" parent="VBoxContainer/desc/VBoxContainer/property/HFlowContainer" instance=ExtResource("4_c2nt7")]
+layout_mode = 2
+texture = ExtResource("5_niljs")
+text = "1"
+
+[node name="item2" parent="VBoxContainer/desc/VBoxContainer/property/HFlowContainer" instance=ExtResource("4_c2nt7")]
+layout_mode = 2
+texture = ExtResource("6_478qg")
+text = "0"
+
+[node name="item3" parent="VBoxContainer/desc/VBoxContainer/property/HFlowContainer" instance=ExtResource("4_c2nt7")]
+layout_mode = 2
+texture = ExtResource("7_qxme3")
+text = "0"
+
+[node name="line3" type="Panel" parent="VBoxContainer/desc/VBoxContainer"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d3goy")
+metadata/_edit_lock_ = true
+
+[node name="PanelBorder" type="Node" parent="VBoxContainer/desc/VBoxContainer/line3"]
+script = ExtResource("3_stmfp")
+border_width = 0
+corner_radius = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/desc/VBoxContainer"]
+modulate = Color(0.552941, 0.552941, 0.552941, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "带上可能会有副作用！"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line4" type="Panel" parent="VBoxContainer/desc/VBoxContainer"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d3goy")
+metadata/_edit_lock_ = true
+
+[node name="PanelBorder" type="Node" parent="VBoxContainer/desc/VBoxContainer/line4"]
+script = ExtResource("3_stmfp")
+border_width = 0
+corner_radius = 2
+
+[node name="value" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/value"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="coin" type="HBoxContainer" parent="VBoxContainer/value/VBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/value/VBoxContainer/coin"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+texture = ExtResource("8_3cc8g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/value/VBoxContainer/coin"]
+layout_mode = 2
+theme_override_constants/margin_top = 2
+
+[node name="coin_label" type="Label" parent="VBoxContainer/value/VBoxContainer/coin/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 6
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="board" type="MarginContainer" parent="."]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="ControlHoverBoard" type="ReferenceRect" parent="board" node_paths=PackedStringArray("target")]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+border_color = Color(0.611765, 0.776471, 0.815686, 1)
+border_width = 2.0
+editor_only = false
+script = ExtResource("9_4nw3e")
+target = NodePath("..")
+
+[node name="ControlClickBorder" type="ReferenceRect" parent="board" node_paths=PackedStringArray("target")]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+border_color = Color(1, 0, 0, 0.52549)
+editor_only = false
+script = ExtResource("10_o5vr1")
+target = NodePath("..")
+
+[connection signal="gui_input" from="board" to="." method="_on_board_gui_input"]
+[connection signal="visibility_changed" from="board/ControlClickBorder" to="." method="_on_control_click_border_visibility_changed"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbd163qvacnel"]
+
+[ext_resource type="PackedScene" uid="uid://b3073hd1erk0u" path="res://src/main/scene/role/role.tscn" id="1_af8os"]
+[ext_resource type="PackedScene" uid="uid://bx4q5qc18wfo5" path="res://src/main/scene/role/player/bee/animation.tscn" id="2_hpu0l"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/behavior/config_fly_attack.gd" id="3_14c3h"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/canvas/config_canvas_flip.gd" id="4_i2cy2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67sle"]
+size = Vector2(8, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eprlx"]
+radius = 66.0
+
+[node name="bee" instance=ExtResource("1_af8os")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base_node/anim_canvas/body_area" index="0"]
+shape = SubResource("RectangleShape2D_67sle")
+
+[node name="animation" parent="base_node/anim_canvas" index="2" instance=ExtResource("2_hpu0l")]
+frame = 0
+frame_progress = 0.0
+
+[node name="attack_ray" type="RayCast2D" parent="base_node/anim_canvas" index="3"]
+position = Vector2(-6, 0)
+rotation = 1.57079
+target_position = Vector2(-3.77615e-05, 17)
+
+[node name="detect_area" type="Area2D" parent="base_node/anim_canvas" index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base_node/anim_canvas/detect_area" index="0"]
+shape = SubResource("CircleShape2D_eprlx")
+
+[node name="ConfigFlyAttackPlayer" type="Node" parent="config" index="2" node_paths=PackedStringArray("attack_ray", "detect_area")]
+script = ExtResource("3_14c3h")
+attack_ray = NodePath("../../base_node/anim_canvas/attack_ray")
+detect_area = NodePath("../../base_node/anim_canvas/detect_area")
+
+[node name="ConfigCanvasFlip" type="Node" parent="config" index="3"]
+script = ExtResource("4_i2cy2")

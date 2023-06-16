@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://5vjq6kgc5vsg"]
+
+[ext_resource type="Texture2D" uid="uid://p0ue88iohm67" path="res://src/main/assets/texture/used/item/treasure/diamonds.png" id="1_a8ctt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33jff"]
+atlas = ExtResource("1_a8ctt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8wcy"]
+atlas = ExtResource("1_a8ctt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq6tv"]
+atlas = ExtResource("1_a8ctt")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iajiw"]
+atlas = ExtResource("1_a8ctt")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j163v"]
+atlas = ExtResource("1_a8ctt")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78rqn"]
+atlas = ExtResource("1_a8ctt")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tkqv4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33jff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8wcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq6tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iajiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j163v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78rqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78rqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78rqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78rqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78rqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78rqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78rqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78rqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78rqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78rqn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="diamonds" type="AnimatedSprite2D"]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_tkqv4")

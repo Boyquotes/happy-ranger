@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/main/scene/ui/hud/select_item/select_item.gd" id="1_ol87l"]
+[ext_resource type="Script" path="res://addons/apprentice/node/control_effect/scale.gd" id="2_2ajwr"]
+[ext_resource type="Curve" uid="uid://bqq1h6tdcxw7m" path="res://src/main/assets/curve/fluctuate.tres" id="3_3c0bf"]
+[ext_resource type="Curve" uid="uid://ddnnpjpjtw788" path="res://src/main/assets/curve/scale_hide.tres" id="4_sngts"]
+
+[node name="select_item" type="Control"]
+editor_description = "左侧选项列表项"
+texture_filter = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 3
+anchor_top = 0.078
+anchor_bottom = 0.078
+offset_top = -28.08
+offset_right = 200.0
+offset_bottom = 27.92
+script = ExtResource("1_ol87l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="space" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="label" type="RichTextLabel" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 11
+theme_override_font_sizes/bold_font_size = 11
+theme_override_font_sizes/italics_font_size = 11
+theme_override_font_sizes/bold_italics_font_size = 11
+theme_override_font_sizes/mono_font_size = 11
+bbcode_enabled = true
+text = "其中一个选项..."
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="select_button" type="Button" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.536
+anchor_right = 0.5
+anchor_bottom = 0.536
+offset_left = -34.0
+offset_top = -20.016
+offset_right = 34.0
+offset_bottom = 19.984
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(28, 20)
+focus_mode = 0
+theme_override_font_sizes/font_size = 13
+text = "SELECT"
+
+[node name="control_scale" type="Control" parent="HBoxContainer/Control/select_button" node_paths=PackedStringArray("target_node")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+offset_left = -16.0
+offset_top = -10.0
+offset_right = -16.0
+offset_bottom = -10.0
+script = ExtResource("2_2ajwr")
+zoom = Vector2(1, 1)
+from = Vector2(0, 0)
+curve = ExtResource("3_3c0bf")
+target_node = NodePath("..")
+duration = 0.25
+
+[node name="hide_button" type="Control" parent="HBoxContainer/Control/select_button" node_paths=PackedStringArray("target_node")]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -16.0
+offset_top = -10.0
+offset_right = -16.0
+offset_bottom = -10.0
+script = ExtResource("2_2ajwr")
+zoom = Vector2(0, 0)
+from = Vector2(1, 1)
+curve = ExtResource("4_sngts")
+target_node = NodePath("..")
+duration = 0.5
+
+[connection signal="pressed" from="HBoxContainer/Control/select_button" to="." method="_on_select_button_pressed"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfvd8jadophlu"]
+
+[ext_resource type="Script" path="res://src/main/scene/environment/rhizome/rhizome.gd" id="1_g2qop"]
+[ext_resource type="Texture2D" uid="uid://bsqpil2p051kj" path="res://src/main/scene/environment/rhizome/rhizome_light.png" id="2_fhn23"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gofyy"]
+size = Vector2(16, 16)
+
+[node name="rhizome" type="Area2D"]
+editor_description = "藤蔓"
+texture_filter = 1
+script = ExtResource("1_g2qop")
+
+[node name="Sprite2D" type="NinePatchRect" parent="."]
+offset_right = 16.0
+offset_bottom = 16.0
+texture = ExtResource("2_fhn23")
+region_rect = Rect2(0, 0, 16, 16)
+axis_stretch_vertical = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_gofyy")
+
+[node name="grow_timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="grow_timer" to="." method="_on_grow_timer_timeout"]

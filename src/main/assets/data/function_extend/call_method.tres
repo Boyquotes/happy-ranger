@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CallMethodFunction" load_steps=2 format=3 uid="uid://dbq5o0dbvq1kk"]
+
+[ext_resource type="Script" path="res://src/main/assets/data/function_extend/call_method.gd" id="1_tgrgo"]
+
+[resource]
+script = ExtResource("1_tgrgo")
+method = ""
+parameters = []
+interval = 0.0
+count = -1
+name = ""
+description = ""
+delay_time = 0.0
+duration = 0.0
+showed = true

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qama6673b46d"
+path="res://.godot/imported/CC-DS Blood Splash Hard.wav-b7e46c9721639339d0e8d7f45cbec993.sample"
+
+[deps]
+
+source_file="res://src/main/assets/sound/used/die/CC-DS Blood Splash Hard.wav"
+dest_files=["res://.godot/imported/CC-DS Blood Splash Hard.wav-b7e46c9721639339d0e8d7f45cbec993.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

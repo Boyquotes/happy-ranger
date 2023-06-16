@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhb33n3bo43fx"]
+
+[ext_resource type="Script" path="res://src/main/scene/ui/hud/cards/cards.gd" id="1_m2nth"]
+[ext_resource type="Script" path="res://addons/apprentice/node/control_effect/offset.gd" id="2_4xu44"]
+[ext_resource type="Curve" uid="uid://2c0xfjd8cio2" path="res://src/main/assets/curve/card_offset.tres" id="3_rjjqo"]
+[ext_resource type="Script" path="res://addons/apprentice/node/control_effect/scale.gd" id="4_bsn88"]
+[ext_resource type="PackedScene" uid="uid://ch26o82fwubmv" path="res://src/main/scene/ui/hud/cards/card/card.tscn" id="4_rmqir"]
+[ext_resource type="Curve" uid="uid://dd6e3sgas133r" path="res://src/main/assets/curve/card_scale.tres" id="5_llxwe"]
+
+[node name="cards" type="Control"]
+process_mode = 3
+editor_description = "弹出卡片"
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_m2nth")
+metadata/_edit_lock_ = true
+
+[node name="color_rect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="control_effect_offset" type="Control" parent="." node_paths=PackedStringArray("target_node")]
+anchors_preset = 0
+offset_left = -18.0
+offset_top = 8.0
+offset_right = -18.0
+offset_bottom = 8.0
+mouse_filter = 2
+script = ExtResource("2_4xu44")
+offset = Vector2(0, -320)
+curve = ExtResource("3_rjjqo")
+target_node = NodePath("../cards")
+mode = 1
+duration = 0.3
+interval = 0.08
+
+[node name="control_effect_stretch" type="Control" parent="." node_paths=PackedStringArray("target_node")]
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("4_bsn88")
+zoom = Vector2(1, 1)
+curve = ExtResource("5_llxwe")
+target_node = NodePath("../cards")
+mode = 1
+duration = 0.45
+interval = 0.08
+
+[node name="cards" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="card" parent="cards" instance=ExtResource("4_rmqir")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.167
+anchor_right = 0.167
+offset_left = -79.88
+offset_top = 360.0
+offset_right = 80.12
+offset_bottom = 594.0
+pivot_offset = Vector2(81, 119)
+
+[node name="card2" parent="cards" instance=ExtResource("4_rmqir")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 360.0
+offset_right = 80.0
+offset_bottom = 594.0
+
+[node name="card3" parent="cards" instance=ExtResource("4_rmqir")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.833
+anchor_right = 0.833
+offset_left = -80.1201
+offset_top = 360.0
+offset_right = 79.8799
+offset_bottom = 594.0
+
+[node name="button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 309.0
+offset_right = 378.0
+offset_bottom = 352.0
+focus_mode = 0
+toggle_mode = true
+text = "PopupCard"
+
+[connection signal="toggled" from="button" to="." method="exec"]

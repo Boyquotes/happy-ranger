@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SoundConfig" load_steps=3 format=3 uid="uid://bnjdo36qfg6ul"]
+
+[ext_resource type="Script" path="res://addons/apprentice/resource/resource_sound_config.gd" id="1_oyh0d"]
+[ext_resource type="AudioStream" uid="uid://cn2whcmc85f23" path="res://src/main/assets/sound/game/Circuit.mp3" id="2_icfgs"]
+
+[resource]
+script = ExtResource("1_oyh0d")
+stream = ExtResource("2_icfgs")
+from_position = 0.0
+volume_db = -10.0
+pitch_scale = 1.75
+stop_time = 156.0
+loop = true

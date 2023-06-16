@@ -1,0 +1,142 @@
+[gd_scene load_steps=6 format=3 uid="uid://6g68wbp562gh"]
+
+[ext_resource type="Script" path="res://addons/scene_management/scene/scene_management.gd" id="1_rpiyr"]
+[ext_resource type="Script" path="res://addons/scene_management/scene/scene_item/scene_items.gd" id="2_kocjh"]
+[ext_resource type="PackedScene" uid="uid://b1qtauyh21nwh" path="res://addons/scene_management/scene/add_groups/group_items.tscn" id="2_vtuv3"]
+[ext_resource type="PackedScene" uid="uid://drbqybv1bif8q" path="res://addons/scene_management/scene/scene_item/scene_item.tscn" id="3_4ijbt"]
+[ext_resource type="PackedScene" uid="uid://l3pi31q1qbbm" path="res://addons/scene_management/scene/add_groups/add_groups.tscn" id="5_fu0ok"]
+
+[node name="SceneManagement" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_rpiyr")
+metadata/_edit_lock_ = true
+metadata/DISCLOSE = true
+
+[node name="background_panel" type="Panel" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.1)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer"]
+layout_mode = 2
+split_offset = 150
+
+[node name="group_items" parent="MarginContainer/HSplitContainer" instance=ExtResource("2_vtuv3")]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 6
+item_1/text = "插件"
+item_2/text = "环境"
+item_3/text = "主场景"
+item_4/text = "角色"
+item_5/text = "UI"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HSplitContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="rescan" type="Button" parent="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "刷新"
+
+[node name="space" type="Control" parent="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="float_button" type="Button" parent="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+text = "浮动"
+
+[node name="separactor" type="MarginContainer" parent="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/separactor"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="scene_items" type="HFlowContainer" parent="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 0
+script = ExtResource("2_kocjh")
+item_scene = ExtResource("3_4ijbt")
+
+[node name="prompt_message" type="Label" parent="MarginContainer/HSplitContainer/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 2
+text = "拖拽文件或者文件夹添加场景"
+horizontal_alignment = 1
+
+[node name="right_menu" type="PopupMenu" parent="."]
+unique_name_in_owner = true
+item_count = 1
+item_0/text = "分组"
+item_0/id = 0
+
+[node name="group_dialog" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+size = Vector2i(450, 300)
+
+[node name="add_groups" parent="group_dialog" instance=ExtResource("5_fu0ok")]
+unique_name_in_owner = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="preview_viewport" type="SubViewportContainer" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 314.0
+offset_top = -1041.0
+offset_right = 767.0
+offset_bottom = -683.0
+
+[node name="SubViewport" type="SubViewport" parent="Control/preview_viewport"]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[connection signal="ready_remove_group" from="MarginContainer/HSplitContainer/group_items" to="." method="_on_group_items_ready_remove_group"]
+[connection signal="selected" from="MarginContainer/HSplitContainer/group_items" to="." method="_on_group_items_selected"]
+[connection signal="pressed" from="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/HBoxContainer/rescan" to="." method="_on_rescan_pressed"]
+[connection signal="toggled" from="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/HBoxContainer/float_button" to="." method="_on_float_toggled"]
+[connection signal="newly_added_item" from="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/ScrollContainer/scene_items" to="." method="_on_scene_items_newly_added_item"]
+[connection signal="removed_item" from="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/ScrollContainer/scene_items" to="." method="_on_scene_items_removed_item"]
+[connection signal="right_click" from="MarginContainer/HSplitContainer/MarginContainer/VBoxContainer/ScrollContainer/scene_items" to="." method="_on_scene_items_right_click"]
+[connection signal="added" from="group_dialog/add_groups" to="." method="_on_add_groups_added"]
+[connection signal="removed" from="group_dialog/add_groups" to="." method="_on_add_groups_removed"]

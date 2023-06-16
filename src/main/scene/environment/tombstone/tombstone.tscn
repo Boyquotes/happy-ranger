@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyiacqgvwwraw"]
+
+[ext_resource type="Script" path="res://src/main/scene/environment/tombstone/tombstone.gd" id="1_d64ao"]
+[ext_resource type="SpriteFrames" uid="uid://c0nv2uqxbfyp0" path="res://src/main/scene/environment/tombstone/animation.tres" id="2_xwcu3"]
+[ext_resource type="Script" path="res://addons/apprentice/node/stage_progress.gd" id="3_ohfx4"]
+[ext_resource type="Script" path="res://src/main/scene/environment/tombstone/maker.gd" id="4_a71x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpvuy"]
+size = Vector2(16, 16)
+
+[node name="tombstone" type="Area2D"]
+editor_description = "墓碑"
+texture_filter = 1
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_d64ao")
+
+[node name="anim_spr_previous" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = ExtResource("2_xwcu3")
+centered = false
+
+[node name="anim_spr_current" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+sprite_frames = ExtResource("2_xwcu3")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_rpvuy")
+
+[node name="StageProgress" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_ohfx4")
+
+[node name="Maker" type="Node2D" parent="." node_paths=PackedStringArray("create_to")]
+script = ExtResource("4_a71x2")
+create_to = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Maker"]
+position = Vector2(9, 12)
+
+[connection signal="stage_changed" from="StageProgress" to="." method="_on_step_progress_stage_changed"]

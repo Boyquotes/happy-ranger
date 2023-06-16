@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://5m65rohp2k81"]
+
+[ext_resource type="Script" path="res://src/main/scene/ui/hud/event_prompt/event_prompt.gd" id="1_funrg"]
+
+[node name="event_prompt" type="Control"]
+editor_description = "事件弹窗"
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(110, 20)
+mouse_filter = 2
+script = ExtResource("1_funrg")
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_left = 213.0
+offset_top = 18.0
+offset_right = 433.0
+offset_bottom = 58.0
+mouse_filter = 2
+
+[node name="min_size" type="MarginContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(220, 40)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer/min_size"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0.14902, 0.14902, 0.14902, 0.568627)
+
+[node name="content" type="MarginContainer" parent="CenterContainer/min_size"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/min_size/content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Control2" type="Control" parent="CenterContainer/min_size/content/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="texture_rect" type="TextureRect" parent="CenterContainer/min_size/content/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="CenterContainer/min_size/content/HBoxContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="label" type="Label" parent="CenterContainer/min_size/content/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "事件提示：XXX 出现！"
+horizontal_alignment = 1
+vertical_alignment = 1

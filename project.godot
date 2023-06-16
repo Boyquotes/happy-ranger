@@ -1,0 +1,74 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[addons]
+
+resources_spreadsheet_view/color_rows=true
+resources_spreadsheet_view/color_arrays=true
+resources_spreadsheet_view/array_min_width=128.0
+resources_spreadsheet_view/resource_preview_size=32.0
+resources_spreadsheet_view/clip_headers=false
+resources_spreadsheet_view/dupe_arrays=true
+resources_spreadsheet_view/context_menu_on_leftclick=false
+
+[application]
+
+config/name="happy-ranger"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+FNodeGlobal="*res://addons/fnode_v2/src/common/FNodeGlobal.gd"
+AutoLoadConfig="*res://addons/apprentice/config/auto_load_config.gd"
+Global="*res://src/main/common/autoload/game_global.gd"
+GameEvent="*res://src/main/common/autoload/game_event.gd"
+
+[debug]
+
+gdscript/warnings/unused_variable=0
+gdscript/warnings/unused_local_constant=0
+gdscript/warnings/shadowed_variable=0
+gdscript/warnings/unused_private_class_variable=0
+gdscript/warnings/unused_parameter=0
+gdscript/warnings/unused_signal=0
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ActionIcon/plugin.cfg", "res://addons/ColorPreview/plugin.cfg", "res://addons/script_comment_menu/plugin.cfg", "res://addons/init_project_folder/plugin.cfg", "res://addons/float_script_editor/plugin.cfg", "res://addons/fnode_v2/plugin.cfg", "res://addons/apprentice/plugin.cfg", "res://addons/collection_panel/plugin.cfg", "res://addons/create_editor_script/plugin.cfg", "res://addons/sprite_sheet/plugin.cfg")
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="role"
+2d_physics/layer_3="wall"
+2d_physics/layer_4="floor"
+2d_physics/layer_5="missile"
+2d_physics/layer_6="shop"
+2d_physics/layer_7="stairs"
+2d_physics/layer_8="env"
+2d_physics/layer_9="goods"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.0941176, 0.0784314, 0.0666667, 1)
+textures/canvas_textures/default_texture_filter=0

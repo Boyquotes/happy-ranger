@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://drbqybv1bif8q"]
+
+[ext_resource type="Script" path="res://addons/scene_management/scene/scene_item/scene_item.gd" id="1_6admx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2vyac"]
+resource_local_to_scene = true
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0)
+
+[node name="MarginContainer" type="MarginContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(125, 0)
+offset_right = 125.0
+offset_bottom = 110.0
+mouse_filter = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_6admx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="texture_rect" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="path_label" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "path"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="editor_desc" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 2
+text = "desc"
+horizontal_alignment = 1
+
+[node name="border" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2vyac")

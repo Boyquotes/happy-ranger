@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ControlPropertyFunction" load_steps=2 format=3 uid="uid://d0gr1w4r0ttko"]
+
+[ext_resource type="Script" path="res://src/main/assets/data/function_extend/control_property.gd" id="1_ycnjl"]
+
+[resource]
+script = ExtResource("1_ycnjl")
+property = ""
+value = 0.0
+count = -1
+interval = 0.0
+delay_time = 0.0
+name = ""
+description = ""
+duration = 0.0
+showed = true

@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1qtauyh21nwh"]
+
+[ext_resource type="Script" path="res://addons/scene_management/scene/add_groups/group_items.gd" id="1_xkeck"]
+[ext_resource type="PackedScene" uid="uid://l3pi31q1qbbm" path="res://addons/scene_management/scene/add_groups/add_groups.tscn" id="2_ckx2o"]
+
+[node name="group_items" type="ItemList"]
+mouse_filter = 1
+item_count = 1
+item_0/text = "[ALL]"
+script = ExtResource("1_xkeck")
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+unique_name_in_owner = true
+item_count = 3
+item_0/text = "新增分组"
+item_0/id = 0
+item_1/text = ""
+item_1/id = -1
+item_1/separator = true
+item_2/text = "移除"
+item_2/id = 2
+
+[node name="Node" type="Node" parent="."]
+
+[node name="add_custom_group_window" type="Window" parent="."]
+unique_name_in_owner = true
+size = Vector2i(350, 200)
+visible = false
+
+[node name="Panel" type="Panel" parent="add_custom_group_window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="add_custom_groups" parent="add_custom_group_window" instance=ExtResource("2_ckx2o")]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="index_pressed" from="PopupMenu" to="." method="_on_popup_menu_index_pressed"]
+[connection signal="added" from="add_custom_group_window/add_custom_groups" to="." method="_on_add_custom_groups_added"]
+[connection signal="removed" from="add_custom_group_window/add_custom_groups" to="." method="_on_add_custom_groups_removed"]

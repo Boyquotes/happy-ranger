@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://ndhut5yqbsjg"]
+
+[ext_resource type="Script" path="res://addons/fnode_v2/src/core/FRoot.gd" id="1_qo2sj"]
+[ext_resource type="Script" path="res://src/main/scene/role/player_input.gd" id="2_rlm6n"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/behavior/attack_slither.gd" id="3_j1c5g"]
+[ext_resource type="Script" path="res://src/main/scene/role/global_player.gd" id="4_b2bay"]
+
+[node name="player_control" type="Node"]
+script = ExtResource("1_qo2sj")
+
+[node name="player_input" type="Node" parent="."]
+script = ExtResource("2_rlm6n")
+
+[node name="attack_slither" type="Node" parent="."]
+script = ExtResource("3_j1c5g")
+
+[node name="global_player" type="Node" parent="."]
+script = ExtResource("4_b2bay")

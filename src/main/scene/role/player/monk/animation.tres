@@ -1,0 +1,134 @@
+[gd_resource type="SpriteFrames" load_steps=25 format=3 uid="uid://t3k5ybkq1atw"]
+
+[ext_resource type="Texture2D" uid="uid://c2suc8xdcbbxc" path="res://src/main/scene/role/player/monk/monk/monk_idle_01.png" id="1_el2gn"]
+[ext_resource type="Texture2D" uid="uid://cq0r1mgldh4mg" path="res://src/main/scene/role/player/monk/monk/monk_idle_02.png" id="2_c84db"]
+[ext_resource type="Texture2D" uid="uid://d4fptvao4graa" path="res://src/main/scene/role/player/monk/monk/monk_idle_03.png" id="3_sbcyl"]
+[ext_resource type="Texture2D" uid="uid://b334lguw3fdje" path="res://src/main/scene/role/player/monk/monk/monk_idle_04.png" id="4_x0a1s"]
+[ext_resource type="Texture2D" uid="uid://c525sx5o3xo7u" path="res://src/main/scene/role/player/monk/monk/monk_idle_05.png" id="5_fcv78"]
+[ext_resource type="Texture2D" uid="uid://bwxgyelvmic8f" path="res://src/main/scene/role/player/monk/monk/monk_attack_02.png" id="6_4mmmq"]
+[ext_resource type="Texture2D" uid="uid://52ww066wn7ti" path="res://src/main/scene/role/player/monk/monk/monk_attack_03.png" id="7_3xku4"]
+[ext_resource type="Texture2D" uid="uid://ux0xrwb4gorw" path="res://src/main/scene/role/player/monk/monk/monk_attack_04.png" id="8_oyhmn"]
+[ext_resource type="Texture2D" uid="uid://ck4ete5vs8bgf" path="res://src/main/scene/role/player/monk/monk/monk_attack_05.png" id="9_i6yfq"]
+[ext_resource type="Texture2D" uid="uid://wxksreito70w" path="res://src/main/scene/role/player/monk/monk/monk_attack_06.png" id="10_dffhv"]
+[ext_resource type="Texture2D" uid="uid://cfd683xumhhku" path="res://src/main/scene/role/player/monk/monk/monk_attack_07.png" id="11_o3xvg"]
+[ext_resource type="Texture2D" uid="uid://54cghfbwn0y" path="res://src/main/scene/role/player/monk/monk/monk_attack_08.png" id="12_fokt4"]
+[ext_resource type="Texture2D" uid="uid://d06n6tcs82nvq" path="res://src/main/scene/role/player/monk/monk/monk_attack_09.png" id="13_pfjr5"]
+[ext_resource type="Texture2D" uid="uid://by784f7exmiot" path="res://src/main/scene/role/player/monk/monk/monk_attack_10.png" id="14_101g1"]
+[ext_resource type="Texture2D" uid="uid://whlf0co2me52" path="res://src/main/scene/role/player/monk/monk/monk_attack_11.png" id="15_r6p32"]
+[ext_resource type="Texture2D" uid="uid://b7xliyq42cur1" path="res://src/main/scene/role/player/monk/monk/monk_attack_12.png" id="16_qss15"]
+[ext_resource type="Texture2D" uid="uid://bn155pyrdn3o5" path="res://src/main/scene/role/player/monk/monk/monk_attack_13.png" id="17_38sgl"]
+[ext_resource type="Texture2D" uid="uid://c2515be3s7b0g" path="res://src/main/scene/role/player/monk/monk/monk_attack_14.png" id="18_4e0tb"]
+[ext_resource type="Texture2D" uid="uid://bk0simlh6n58n" path="res://src/main/scene/role/player/monk/monk/monk_attack_15.png" id="19_fi3ff"]
+[ext_resource type="Texture2D" uid="uid://bpkmo2tjkory2" path="res://src/main/scene/role/player/monk/monk/monk_attack_16.png" id="20_1suh7"]
+[ext_resource type="Texture2D" uid="uid://cduu4air0788s" path="res://src/main/scene/role/player/monk/monk/monk_run_01.png" id="21_qb4ov"]
+[ext_resource type="Texture2D" uid="uid://dp38qsaxcnvjk" path="res://src/main/scene/role/player/monk/monk/monk_run_02.png" id="22_l3tsm"]
+[ext_resource type="Texture2D" uid="uid://tkoerwjivl30" path="res://src/main/scene/role/player/monk/monk/monk_run_03.png" id="23_usxch"]
+[ext_resource type="Texture2D" uid="uid://gbq1ivd0slxt" path="res://src/main/scene/role/player/monk/monk/monk_run_04.png" id="24_71o5x"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_el2gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c84db")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sbcyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x0a1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fcv78")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_l3tsm")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4mmmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3xku4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oyhmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i6yfq")
+}],
+"loop": true,
+"name": &"skill01",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_dffhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_o3xvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fokt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pfjr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_101g1")
+}],
+"loop": false,
+"name": &"skill02",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_r6p32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qss15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_38sgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4e0tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fi3ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_1suh7")
+}],
+"loop": false,
+"name": &"skill03",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_qb4ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_l3tsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_usxch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_71o5x")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]

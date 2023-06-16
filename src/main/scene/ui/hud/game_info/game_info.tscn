@@ -1,0 +1,126 @@
+[gd_scene load_steps=2 format=3 uid="uid://cojawupkjpk02"]
+
+[ext_resource type="Script" path="res://src/main/scene/ui/hud/game_info/game_info.gd" id="1_yifb1"]
+
+[node name="game_info" type="MarginContainer"]
+editor_description = "右上角游戏信息"
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_right = 10
+script = ExtResource("1_yifb1")
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+stretch_mode = 3
+
+[node name="time_elapsed" type="Label" parent="HBoxContainer2/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+text = "00:00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="time_elapsed_timer" type="Timer" parent="HBoxContainer2/HBoxContainer/HBoxContainer"]
+autostart = true
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer2/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer2/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="items" type="VBoxContainer" parent="HBoxContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/items"]
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/items/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/items/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "击杀5个小怪"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/items"]
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/items/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/items/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "BOSS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/items"]
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/items/HBoxContainer3"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer2/HBoxContainer/PanelContainer/MarginContainer/VBoxContainer2/items/HBoxContainer3"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 7
+text = "击杀了“宝贝”，发出消息弹窗”我的宝贝！“"
+autowrap_mode = 1
+
+[connection signal="timeout" from="HBoxContainer2/HBoxContainer/HBoxContainer/time_elapsed_timer" to="." method="_on_time_elapsed_timer_timeout"]

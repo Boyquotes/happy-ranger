@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://cevbgi5kl67me"]
+
+[ext_resource type="Script" path="res://src/main/v1/environment/skull/skull.gd" id="1_8gw50"]
+[ext_resource type="Texture2D" uid="uid://d1d3phye04xkc" path="res://src/main/scene/environment/skull/skull.png" id="2_3ukyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x32ds"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05jc0"]
+atlas = ExtResource("2_3ukyd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ldrn"]
+atlas = ExtResource("2_3ukyd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_787up"]
+atlas = ExtResource("2_3ukyd")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xli4u"]
+atlas = ExtResource("2_3ukyd")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oq6oy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05jc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ldrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_787up")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xli4u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_0n7f4"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.241888, 0.755162, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0.999142, 0.999142, 0.999142, 1.00398, 0.985193, 0.985193, 0.985193, 1, 0.980392, 0.980392, 0.980392, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2d47x"]
+gradient = SubResource("Gradient_0n7f4")
+
+[sub_resource type="Curve" id="Curve_8xvsr"]
+_data = [Vector2(0, 0), 0.0, 5.93887, 0, 0, Vector2(0.191257, 1), 0.0, 0.0, 0, 0, Vector2(0.778689, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_fn5ll"]
+curve = SubResource("Curve_8xvsr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4pri8"]
+emission_shape = 3
+emission_box_extents = Vector3(6, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 30.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_fn5ll")
+color = Color(0.905882, 0.882353, 0.870588, 1)
+color_ramp = SubResource("GradientTexture1D_2d47x")
+
+[node name="skull" type="Area2D"]
+editor_description = "骷髅"
+texture_filter = 1
+script = ExtResource("1_8gw50")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_x32ds")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oq6oy")
+centered = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(9, 13)
+process_material = SubResource("ParticleProcessMaterial_4pri8")
+lifetime = 1.25
+preprocess = 1.0

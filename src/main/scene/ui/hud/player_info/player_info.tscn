@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn7ekqmsmvrb6"]
+
+[ext_resource type="Script" path="res://src/main/scene/ui/hud/player_info/player_info.gd" id="1_3uh2t"]
+[ext_resource type="Script" path="res://src/main/scene/ui/hud/player_info/property_bar.gd" id="2_w64xs"]
+[ext_resource type="Texture2D" uid="uid://dvjjwq7ajt72m" path="res://src/main/assets/texture/used/item/treasure/coins_hud.png" id="5_vq0c4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whkat"]
+atlas = ExtResource("5_vq0c4")
+region = Rect2(0, 0, 9, 9)
+margin = Rect2(3, 3, 6, 6)
+
+[node name="player_info" type="MarginContainer"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+script = ExtResource("1_3uh2t")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="health_bar" type="HBoxContainer" parent="VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_constants/separation = 0
+script = ExtResource("2_w64xs")
+template_node = NodePath("health_template")
+
+[node name="health_template" type="TextureProgressBar" parent="VBoxContainer2/health_bar"]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 1.0
+nine_patch_stretch = true
+
+[node name="res_info" type="MarginContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 4
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/res_info"]
+layout_mode = 2
+
+[node name="coin" type="HBoxContainer" parent="VBoxContainer2/res_info/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2/res_info/HBoxContainer/coin"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+texture = SubResource("AtlasTexture_whkat")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="coin_number" type="Label" parent="VBoxContainer2/res_info/HBoxContainer/coin"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="space" type="Control" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2"]
+layout_mode = 2
+metadata/_edit_group_ = true
+
+[node name="weapons" type="HBoxContainer" parent="VBoxContainer2/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2

@@ -1,0 +1,131 @@
+[gd_scene load_steps=23 format=3 uid="uid://opp5c1o0jgwx"]
+
+[ext_resource type="PackedScene" uid="uid://b3073hd1erk0u" path="res://src/main/scene/role/role.tscn" id="1_he8ou"]
+[ext_resource type="SpriteFrames" uid="uid://t3k5ybkq1atw" path="res://src/main/scene/role/player/monk/animation.tres" id="3_4c42y"]
+[ext_resource type="Script" path="res://addons/apprentice/node/move_controller/platform_controller.gd" id="3_chlrf"]
+[ext_resource type="Script" path="res://addons/apprentice/node/damage_body_area/damage_area.gd" id="3_jvkq3"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/canvas/config_canvas_flip.gd" id="4_5y2rn"]
+[ext_resource type="Script" path="res://src/main/scene/goods/take_goods_area.gd" id="4_mdlnn"]
+[ext_resource type="Script" path="res://src/main/scene/role/player/monk/config_monk_animation.gd" id="5_lyqgq"]
+[ext_resource type="Script" path="res://addons/fnode_v2/src/core/FNode.gd" id="6_12pfp"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/skill/config_attack.gd" id="6_ja228"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/canvas/config_ground_role_animation.gd" id="8_kgo0g"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/canvas/config_skill_animation.gd" id="10_8bupi"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/sound/config_jump.gd" id="10_2331v"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/canvas/res_skill_animation.gd" id="11_6rpfl"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/behavior/config_climb_wall.gd" id="11_arpl5"]
+[ext_resource type="Script" path="res://addons/apprentice/resource/resource_sound_config.gd" id="12_w5u7n"]
+[ext_resource type="AudioStream" uid="uid://bnerk1gdep7q3" path="res://src/main/assets/sound/used/jump/ESM_GF_fx_sand_one_shots_footstep_sneakers_running_dry_crispy_bright_exterior_23.wav" id="13_rwnpw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwvoh"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wqdy"]
+size = Vector2(20, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_odny1"]
+radius = 8.0
+
+[sub_resource type="Resource" id="Resource_g53dv"]
+script = ExtResource("11_6rpfl")
+skill_name = &"attack"
+stage = 1
+animation = &"skill02"
+
+[sub_resource type="Resource" id="Resource_tm6yw"]
+script = ExtResource("11_6rpfl")
+skill_name = &"attack"
+stage = 4
+animation = &"idle"
+
+[sub_resource type="Resource" id="Resource_gvvqk"]
+script = ExtResource("12_w5u7n")
+stream = ExtResource("13_rwnpw")
+from_position = 0.0
+volume_db = 0.0
+pitch_scale = 1.0
+stop_time = 0.0
+loop = false
+
+[node name="monk" instance=ExtResource("1_he8ou")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_cwvoh")
+
+[node name="anim_canvas" parent="base_node" index="0"]
+target = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="base_node/anim_canvas" index="0"]
+sprite_frames = ExtResource("3_4c42y")
+animation = &"idle"
+offset = Vector2(5, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base_node/anim_canvas/body_area" index="0"]
+shape = SubResource("RectangleShape2D_cwvoh")
+
+[node name="DamageArea" type="Area2D" parent="base_node/anim_canvas" index="3" node_paths=PackedStringArray("host")]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("3_jvkq3")
+host = NodePath("../../..")
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base_node/anim_canvas/DamageArea" index="0"]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_0wqdy")
+disabled = true
+
+[node name="TakeGoodsArea" type="Area2D" parent="base_node/anim_canvas" index="4" node_paths=PackedStringArray("host")]
+script = ExtResource("4_mdlnn")
+host = NodePath("../../..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base_node/anim_canvas/TakeGoodsArea" index="0"]
+shape = SubResource("CircleShape2D_odny1")
+
+[node name="PlatformController" type="Node2D" parent="base_node" index="8" node_paths=PackedStringArray("host")]
+script = ExtResource("3_chlrf")
+host = NodePath("../..")
+grace_time = 0.2
+jump_height = 150.0
+floor_dwell_time = 0.1
+gravity_max = 350.0
+move_speed = 80.0
+
+[node name="config_role_died" parent="config" index="1"]
+enabled = false
+
+[node name="monk_anima" type="Node" parent="config" index="2"]
+script = ExtResource("5_lyqgq")
+
+[node name="base" type="Node" parent="config" index="3"]
+script = ExtResource("6_12pfp")
+
+[node name="ConfigCanvasFlip" type="Node" parent="config/base" index="0"]
+script = ExtResource("4_5y2rn")
+default_diretion = 1
+
+[node name="ConfigAttack" type="Node" parent="config/base" index="1" node_paths=PackedStringArray("damage_area")]
+script = ExtResource("6_ja228")
+before_time = 0.1
+execute_time = 0.1
+after_time = 0.2
+cooldown_time = 0.3
+damage_area = NodePath("../../../base_node/anim_canvas/DamageArea")
+
+[node name="ConfigSkillAnimation" type="Node" parent="config/base/ConfigAttack" index="0"]
+script = ExtResource("10_8bupi")
+animations = Array[ExtResource("11_6rpfl")]([SubResource("Resource_g53dv"), SubResource("Resource_tm6yw")])
+
+[node name="ConfigGroundRoleAnimation" type="Node" parent="config/base" index="2"]
+script = ExtResource("8_kgo0g")
+fall = "jump"
+
+[node name="ConfigJump" type="Node" parent="config/base" index="3"]
+script = ExtResource("10_2331v")
+type = "normal"
+sound_config = Array[ExtResource("12_w5u7n")]([SubResource("Resource_gvvqk")])
+
+[node name="ConfigClimbWall" type="Node" parent="config/base" index="4"]
+script = ExtResource("11_arpl5")
+enabled = true

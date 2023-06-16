@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="BaseItemData" load_steps=3 format=3 uid="uid://db6luhsds3pju"]
+
+[ext_resource type="Script" path="res://src/main/assets/data/item/base_item_data.gd" id="1_14fib"]
+[ext_resource type="Texture2D" uid="uid://bj5galwlvhdwx" path="res://src/main/assets/texture/used/item/weapon/02/Item_16.png" id="2_silt5"]
+
+[resource]
+script = ExtResource("1_14fib")
+texture = ExtResource("2_silt5")
+item_type = 1
+name = "大棒"
+description = "胡萝卜加大棒，但是没有胡萝卜，只能给你一棒子"
+showed = true
+health = 0
+health_recovery = 0.0
+healing_rate = 0.0
+attack = 0.0
+attack_speed = 0.0
+attack_range = 10
+move_speed = 0
+jump_height = 0
+count = 1
+level = 0
+experience = 0
+functions = Array[Resource("res://src/main/assets/data/function/base_function.gd")]([])
+upgrades = Array[Resource("res://src/main/assets/data/item/upgrade_item_data.gd")]([])

@@ -1,0 +1,138 @@
+[gd_scene load_steps=19 format=3 uid="uid://dtspeo0airj7c"]
+
+[ext_resource type="Texture2D" uid="uid://f1td5y6asege" path="res://src/main/assets/texture/item/Chest_Open_Empty.png" id="1_hy8xd"]
+[ext_resource type="Script" path="res://src/main/scene/environment/chest/chest.gd" id="1_xf37u"]
+[ext_resource type="Texture2D" uid="uid://cim41o43x5a70" path="res://src/main/assets/texture/item/Chest_Open_Filled.png" id="2_3hyl6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpqp5"]
+size = Vector2(8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdfrv"]
+atlas = ExtResource("1_hy8xd")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq2oy"]
+atlas = ExtResource("1_hy8xd")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppleo"]
+atlas = ExtResource("1_hy8xd")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj43l"]
+atlas = ExtResource("1_hy8xd")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyj4c"]
+atlas = ExtResource("2_3hyl6")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vabym"]
+atlas = ExtResource("2_3hyl6")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_218fu"]
+atlas = ExtResource("2_3hyl6")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htica"]
+atlas = ExtResource("2_3hyl6")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcoyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdfrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq2oy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppleo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj43l")
+}],
+"loop": false,
+"name": &"normal",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyj4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vabym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_218fu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htica")
+}],
+"loop": false,
+"name": &"treasure",
+"speed": 12.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_xngxc"]
+offsets = PackedFloat32Array(0.047619, 0.129252, 0.727891, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e2wnx"]
+gradient = SubResource("Gradient_xngxc")
+
+[sub_resource type="Curve" id="Curve_8d3yv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.912773, 0.377358), -2.77594, -2.77594, 0, 0, Vector2(0.984424, 0), -4.79481, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wfjsq"]
+curve = SubResource("Curve_8d3yv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fb7a7"]
+emission_shape = 1
+emission_sphere_radius = 6.0
+particle_flag_disable_z = true
+direction = Vector3(0, -10, 0)
+spread = 60.0
+gravity = Vector3(0, 100, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_max = 20.0
+scale_curve = SubResource("CurveTexture_wfjsq")
+color_ramp = SubResource("GradientTexture1D_e2wnx")
+hue_variation_min = -0.85
+hue_variation_max = -0.8
+turbulence_noise_scale = 10.0
+
+[node name="chest" type="Area2D"]
+texture_filter = 1
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_xf37u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_jpqp5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4, -14)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_dcoyb")
+animation = &"normal"
+centered = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -8)
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_fb7a7")
+one_shot = true
+explosiveness = 1.0
+visibility_rect = Rect2(-65.3689, -51.4916, 135.127, 64.7265)
+trail_enabled = true
+trail_lifetime = 0.1

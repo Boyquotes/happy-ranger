@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cihicqg5ks68b"]
+
+[ext_resource type="Script" path="res://src/main/scene/ui/hud/player_message/message_item.gd" id="1_77pmw"]
+
+[node name="message_item" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 264.0
+offset_bottom = 56.0
+script = ExtResource("1_77pmw")
+metadata/_edit_group_ = true
+
+[node name="main" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="label" type="RichTextLabel" parent="main"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+text = "不识庐山真面目,只缘身在此山中。"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false

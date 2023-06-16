@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnlhrietgj7mc"]
+
+[ext_resource type="Script" path="res://src/main/scene/environment/sprouts/wind_area.gd" id="1_bme2o"]
+[ext_resource type="Texture2D" uid="uid://wkfi2lnag5k4" path="res://src/main/scene/environment/grass/grass.png" id="1_o7yeo"]
+[ext_resource type="Script" path="res://src/main/scene/environment/grass/grass.gd" id="1_op54u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f36ug"]
+atlas = ExtResource("1_o7yeo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0apjq"]
+atlas = ExtResource("1_o7yeo")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2p3r"]
+atlas = ExtResource("1_o7yeo")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ce6u"]
+atlas = ExtResource("1_o7yeo")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhxkm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f36ug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0apjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2p3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ce6u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqpdj"]
+size = Vector2(16, 16)
+
+[node name="grass" type="Area2D"]
+texture_filter = 1
+monitoring = false
+monitorable = false
+script = ExtResource("1_op54u")
+
+[node name="WindArea" type="Area2D" parent="."]
+collision_layer = 129
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_bme2o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="WindArea"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_uhxkm")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_vqpdj")

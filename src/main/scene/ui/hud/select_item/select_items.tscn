@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://wkmnhmbjpc81"]
+
+[ext_resource type="Script" path="res://src/main/scene/ui/hud/select_item/select_items.gd" id="1_hjq0i"]
+
+[node name="select_items" type="VBoxContainer"]
+editor_description = "左侧选项"
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
+script = ExtResource("1_hjq0i")

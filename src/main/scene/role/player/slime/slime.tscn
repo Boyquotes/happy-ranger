@@ -1,0 +1,109 @@
+[gd_scene load_steps=18 format=3 uid="uid://brey8owce7tnp"]
+
+[ext_resource type="PackedScene" uid="uid://b3073hd1erk0u" path="res://src/main/scene/role/role.tscn" id="1_73t44"]
+[ext_resource type="SpriteFrames" uid="uid://coi48qoxv14sp" path="res://src/main/scene/role/player/slime/animation.tres" id="2_nhyvr"]
+[ext_resource type="Script" path="res://addons/apprentice/node/damage_body_area/damage_area.gd" id="3_la0i7"]
+[ext_resource type="Script" path="res://addons/apprentice/node/move_controller/platform_controller.gd" id="3_sp74s"]
+[ext_resource type="Script" path="res://src/main/scene/role/player/slime/config_slime.gd" id="4_mvvcx"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/canvas/config_canvas_flip.gd" id="4_yfp56"]
+[ext_resource type="Script" path="res://addons/apprentice/resource/value/min_max_value.gd" id="5_l1i5f"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/canvas/config_ground_role_animation.gd" id="7_1skua"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/behavior/config_ground_patrol.gd" id="7_pe5fb"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/behavior/config_take_damage.gd" id="8_2x1pt"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/skill/config_attack.gd" id="12_i7i60"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/behavior/config_behavior_group.gd" id="12_wkky0"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/behavior/config_dropped_items.gd" id="13_kh6bl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2m67"]
+size = Vector2(10, 7)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8aiep"]
+radius = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s4kd"]
+size = Vector2(2.5, 7)
+
+[sub_resource type="Resource" id="Resource_0otnf"]
+script = ExtResource("5_l1i5f")
+max_value = 32.0
+value = 60.0
+
+[node name="slime" instance=ExtResource("1_73t44")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_q2m67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base_node/anim_canvas/body_area" index="0"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_8aiep")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="base_node/anim_canvas" index="2"]
+sprite_frames = ExtResource("2_nhyvr")
+animation = &"walk"
+autoplay = "idle"
+
+[node name="has_wall" type="RayCast2D" parent="base_node/anim_canvas" index="3"]
+position = Vector2(6, 5)
+rotation = -1.57079
+target_position = Vector2(0, 10)
+collision_mask = 4
+
+[node name="has_floor" type="RayCast2D" parent="base_node/anim_canvas" index="4"]
+position = Vector2(6, 6)
+target_position = Vector2(0, 10)
+collision_mask = 8
+
+[node name="DamageArea" type="Area2D" parent="base_node/anim_canvas" index="5" node_paths=PackedStringArray("host")]
+script = ExtResource("3_la0i7")
+host = NodePath("../../..")
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base_node/anim_canvas/DamageArea" index="0"]
+position = Vector2(6.75, 4.5)
+shape = SubResource("RectangleShape2D_0s4kd")
+disabled = true
+
+[node name="PlatformController" type="Node2D" parent="base_node" index="8" node_paths=PackedStringArray("host")]
+script = ExtResource("3_sp74s")
+host = NodePath("../..")
+jump_height = 100.0
+gravity_max = 220.0
+move_speed = 30.0
+
+[node name="config_role_died" parent="config" index="1"]
+died_time = 0.4
+collision = NodePath("../../CollisionShape2D")
+
+[node name="config_slime" type="Node" parent="config" index="2"]
+script = ExtResource("4_mvvcx")
+
+[node name="ConfigCanvasFlip" type="Node" parent="config/config_slime" index="0"]
+script = ExtResource("4_yfp56")
+default_diretion = 1
+
+[node name="ConfigGroundRoleAnimation" type="Node" parent="config/config_slime" index="1"]
+script = ExtResource("7_1skua")
+jump = "idle"
+fall = "idle"
+
+[node name="ConfigAttack" type="Node" parent="config/config_slime" index="2"]
+script = ExtResource("12_i7i60")
+
+[node name="ConfigBehaviorGroup" type="Node" parent="config/config_slime" index="3"]
+script = ExtResource("12_wkky0")
+enabled = true
+
+[node name="ConfigTakeDamage" type="Node" parent="config/config_slime/ConfigBehaviorGroup" index="0"]
+script = ExtResource("8_2x1pt")
+enabled = true
+
+[node name="ConfigGroundPatrol" type="Node" parent="config/config_slime/ConfigBehaviorGroup" index="1" node_paths=PackedStringArray("has_floor", "has_wall")]
+script = ExtResource("7_pe5fb")
+move_distance = SubResource("Resource_0otnf")
+has_floor = NodePath("../../../../base_node/anim_canvas/has_floor")
+has_wall = NodePath("../../../../base_node/anim_canvas/has_wall")
+enabled = true
+
+[node name="ConfigDroppedItems" type="Node" parent="config/config_slime/ConfigBehaviorGroup" index="2"]
+script = ExtResource("13_kh6bl")

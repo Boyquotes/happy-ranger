@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://barn71d1jlsym"
+path="res://.godot/imported/Retro Alarmed 06.wav-0e19e563fda3eaa7f1c153512f7bc2aa.sample"
+
+[deps]
+
+source_file="res://src/main/assets/sound/Retro Alarmed 06.wav"
+dest_files=["res://.godot/imported/Retro Alarmed 06.wav-0e19e563fda3eaa7f1c153512f7bc2aa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

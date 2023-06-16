@@ -1,0 +1,192 @@
+[gd_scene load_steps=26 format=3 uid="uid://c7lw4kjkkmljr"]
+
+[ext_resource type="Texture2D" uid="uid://b2f0j72bf85pr" path="res://icon.svg" id="1_bmcog"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/demo/demo01/player.gd" id="2_as7rl"]
+[ext_resource type="Script" path="res://addons/apprentice/node/move_controller/move_controller.gd" id="3_od1xv"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/src/bt_root.gd" id="4_67d8u"]
+[ext_resource type="Script" path="res://addons/apprentice/node/node_db.gd" id="4_jdmpi"]
+[ext_resource type="Script" path="res://addons/apprentice/node/move_to/move_to.gd" id="5_4roo2"]
+[ext_resource type="Script" path="res://addons/apprentice/node/patrol.gd" id="6_md7n3"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/src/decorator/until.gd" id="7_6wmvc"]
+[ext_resource type="Script" path="res://addons/apprentice/resource/value/min_max_value.gd" id="7_nvjl4"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/src/composite/parallel.gd" id="7_r1wcd"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/prefabs/bt_action_update_key.gd" id="8_1qncd"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/prefabs/res/bt_res_update_key_expression.gd" id="9_iirlf"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/src/composite/selector.gd" id="10_7h6ut"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/prefabs/bt_condition_distance.gd" id="11_l3ffl"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/src/composite/sequence.gd" id="14_p5g0m"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/prefabs/bt_action_enter_exit.gd" id="15_7v5ts"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/prefabs/bt_action_remote_task.gd" id="17_fs0as"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/prefabs/bt_action_move.gd" id="18_85jld"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/src/decorator/pendulum.gd" id="18_o5j8d"]
+[ext_resource type="Script" path="res://addons/apprentice/node/behavior_tree/prefabs/bt_action_log.gd" id="19_jkhu2"]
+
+[sub_resource type="Resource" id="Resource_wj7mc"]
+script = ExtResource("7_nvjl4")
+max_value = 100.0
+value = 300.0
+
+[sub_resource type="Resource" id="Resource_elka4"]
+script = ExtResource("7_nvjl4")
+max_value = 1.5
+value = 3.0
+
+[sub_resource type="Resource" id="Resource_e8gtb"]
+script = ExtResource("9_iirlf")
+expression = "root.get_parent().get_global_mouse_position() "
+target = NodePath("")
+key = "target_pos"
+metadata/_editor_prop_ptr_owner = NodePath("../../..")
+
+[sub_resource type="Resource" id="Resource_jmxu3"]
+script = ExtResource("9_iirlf")
+expression = "root.get_parent().global_position"
+target = NodePath("")
+key = "self_pos"
+
+[sub_resource type="Resource" id="Resource_qlmf3"]
+script = ExtResource("9_iirlf")
+expression = "root.get_parent().position + Vector2(randf_range(100, 300), 0) * [-1, 1][randi() % 2]"
+target = NodePath("")
+key = "patrol_pos"
+
+[node name="demo01" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_top = -295.0
+offset_right = 1289.0
+text = "Parallel 类型的 start 节点开始
+
+1. 首先进行更新 key 相关的数据
+2. 然后使用 Selector 进行选择执行的节点
+3. 这时执行第一个 move_to_enemy，并行执行所有节点，从上到下不断地执行，直到存在有 FAILED 结果的值，start （Selector）节点因为执行失败，开始切换执行到下一个节点
+4. 然后开始执行 patrol 部分，直到 FAILED 执行下一个
+5. 完了重新开始执行
+
+注意：在这里 Selector 类型下的 RUNNING 中的节点如果想要切换到下一个节点中，只能返回 FAILED 值，否则返回 SUCCEED 会重新开始运行
+
+"
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(227, 154)
+scale = Vector2(0.453125, 0.453125)
+texture = ExtResource("1_bmcog")
+script = ExtResource("2_as7rl")
+
+[node name="MoveController" type="Node2D" parent="Player"]
+script = ExtResource("3_od1xv")
+
+[node name="node_db" type="Node" parent="Player" node_paths=PackedStringArray("root")]
+unique_name_in_owner = true
+script = ExtResource("4_jdmpi")
+root = NodePath("..")
+
+[node name="MoveTo" type="Node2D" parent="Player"]
+script = ExtResource("5_4roo2")
+
+[node name="Patrol" type="Node2D" parent="Player"]
+script = ExtResource("6_md7n3")
+distance = SubResource("Resource_wj7mc")
+time = SubResource("Resource_elka4")
+arrive_distance = 20.0
+
+[node name="BTRoot" type="Node" parent="Player"]
+script = ExtResource("4_67d8u")
+
+[node name="BTParallel" type="Node" parent="Player/BTRoot"]
+script = ExtResource("7_r1wcd")
+
+[node name="update_key" type="Node" parent="Player/BTRoot/BTParallel"]
+script = ExtResource("8_1qncd")
+targets = Array[Resource("res://addons/apprentice/node/behavior_tree/prefabs/res/bt_res_update_key.gd")]([SubResource("Resource_e8gtb"), SubResource("Resource_jmxu3")])
+
+[node name="start" type="Node" parent="Player/BTRoot/BTParallel"]
+script = ExtResource("10_7h6ut")
+
+[node name="has_player" type="Node" parent="Player/BTRoot/BTParallel/start"]
+script = ExtResource("10_7h6ut")
+
+[node name="BTParallel" type="Node" parent="Player/BTRoot/BTParallel/start/has_player"]
+script = ExtResource("7_r1wcd")
+
+[node name="attack" type="Node" parent="Player/BTRoot/BTParallel/start/has_player/BTParallel"]
+script = ExtResource("14_p5g0m")
+
+[node name="<30" type="Node" parent="Player/BTRoot/BTParallel/start/has_player/BTParallel/attack"]
+script = ExtResource("11_l3ffl")
+compare = 1
+from = "self_pos"
+to = "target_pos"
+distance = 30.0
+
+[node name="execute_attack" type="Node" parent="Player/BTRoot/BTParallel/start/has_player/BTParallel/attack"]
+script = ExtResource("15_7v5ts")
+
+[node name="until_fail" type="Node" parent="Player/BTRoot/BTParallel/start/has_player/BTParallel"]
+script = ExtResource("7_6wmvc")
+
+[node name="over" type="Node" parent="Player/BTRoot/BTParallel/start/has_player/BTParallel/until_fail" node_paths=PackedStringArray("target_node")]
+script = ExtResource("17_fs0as")
+target_node = NodePath("../../attack/<30")
+
+[node name="move_to_enemy" type="Node" parent="Player/BTRoot/BTParallel/start/has_player"]
+script = ExtResource("14_p5g0m")
+
+[node name=">30" type="Node" parent="Player/BTRoot/BTParallel/start/has_player/move_to_enemy"]
+script = ExtResource("11_l3ffl")
+from = "self_pos"
+to = "target_pos"
+distance = 30.0
+
+[node name="<300" type="Node" parent="Player/BTRoot/BTParallel/start/has_player/move_to_enemy"]
+script = ExtResource("11_l3ffl")
+compare = 1
+from = "self_pos"
+to = "target_pos"
+distance = 300.0
+
+[node name="execute_move" type="Node" parent="Player/BTRoot/BTParallel/start/has_player/move_to_enemy"]
+script = ExtResource("18_85jld")
+from = "self_pos"
+to = "target_pos"
+
+[node name="no_player" type="Node" parent="Player/BTRoot/BTParallel/start"]
+script = ExtResource("14_p5g0m")
+
+[node name="udpate_patrol_pos" type="Node" parent="Player/BTRoot/BTParallel/start/no_player"]
+script = ExtResource("8_1qncd")
+targets = Array[Resource("res://addons/apprentice/node/behavior_tree/prefabs/res/bt_res_update_key.gd")]([SubResource("Resource_qlmf3")])
+
+[node name="log" type="Node" parent="Player/BTRoot/BTParallel/start/no_player"]
+script = ExtResource("19_jkhu2")
+text = "patrol"
+
+[node name="BTPendulum" type="Node" parent="Player/BTRoot/BTParallel/start/no_player"]
+script = ExtResource("18_o5j8d")
+interval = 4.0
+
+[node name="partol" type="Node" parent="Player/BTRoot/BTParallel/start/no_player/BTPendulum"]
+script = ExtResource("7_r1wcd")
+
+[node name="execute_move" type="Node" parent="Player/BTRoot/BTParallel/start/no_player/BTPendulum/partol"]
+script = ExtResource("18_85jld")
+from = "self_pos"
+to = "patrol_pos"
+
+[node name="until_fail" type="Node" parent="Player/BTRoot/BTParallel/start/no_player/BTPendulum/partol"]
+script = ExtResource("7_6wmvc")
+match_result = 1
+
+[node name=">300" type="Node" parent="Player/BTRoot/BTParallel/start/no_player/BTPendulum/partol/until_fail"]
+script = ExtResource("11_l3ffl")
+from = "self_pos"
+to = "target_pos"
+distance = 300.0
+
+[connection signal="moved" from="Player/MoveTo" to="Player" method="move"]
+[connection signal="moved" from="Player/Patrol" to="Player/MoveTo" method="to"]
+[connection signal="stopped" from="Player/Patrol" to="Player/MoveTo" method="stop"]
+[connection signal="entered" from="Player/BTRoot/BTParallel/start/has_player/BTParallel/attack/execute_attack" to="Player" method="attack"]
+[connection signal="exited" from="Player/BTRoot/BTParallel/start/has_player/BTParallel/attack/execute_attack" to="Player" method="attack_exit"]
+[connection signal="moved" from="Player/BTRoot/BTParallel/start/has_player/move_to_enemy/execute_move" to="Player" method="move"]
+[connection signal="moved" from="Player/BTRoot/BTParallel/start/no_player/BTPendulum/partol/execute_move" to="Player" method="move"]

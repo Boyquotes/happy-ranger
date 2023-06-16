@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://wbhgldawn1fd"]
+
+[ext_resource type="Script" path="res://src/main/scene/ui/hud/operating_area/operating_panel.gd" id="1_ejalr"]
+[ext_resource type="Script" path="res://addons/apprentice/node/panel_border.gd" id="2_8fj0o"]
+[ext_resource type="Script" path="res://addons/apprentice/node/control_effect/scale.gd" id="3_uv8oi"]
+[ext_resource type="Script" path="res://addons/apprentice/node/control_effect/offset.gd" id="4_7or0y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep6ki"]
+bg_color = Color(0.266667, 0.294118, 0.368627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0980392, 0.192157, 0.352941, 0.372549)
+anti_aliasing = false
+
+[sub_resource type="Curve" id="Curve_kjt8l"]
+_data = [Vector2(0.618343, 0.00943398), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_vrcd2"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.368571, 0.386792), 1.93559, 1.93559, 0, 0, Vector2(0.651429, 0.839623), 1.07088, 1.07088, 0, 0, Vector2(1, 1), 0.101596, 0.0, 0, 0]
+point_count = 4
+
+[node name="operating_panel" type="Control"]
+editor_description = "操作面板"
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ejalr")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = 1.0
+offset_right = 320.0
+offset_bottom = 145.0
+grow_horizontal = 2
+pivot_offset = Vector2(320, 1)
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ep6ki")
+
+[node name="PanelBorder" type="Node" parent="MarginContainer/Panel"]
+script = ExtResource("2_8fj0o")
+border_color = Color(0.0980392, 0.192157, 0.352941, 0.372549)
+back_color = Color(0.266667, 0.294118, 0.368627, 1)
+border_width = 2
+
+[node name="ControlEffect_Stretch" type="Control" parent="." node_paths=PackedStringArray("target_node")]
+layout_mode = 1
+anchors_preset = 0
+script = ExtResource("3_uv8oi")
+zoom = Vector2(0.8, 0.8)
+from = Vector2(0.5, 0.5)
+curve = SubResource("Curve_kjt8l")
+target_node = NodePath("../MarginContainer")
+
+[node name="ControlEffect_Offset" type="Control" parent="." node_paths=PackedStringArray("target_node")]
+anchors_preset = 0
+scale = Vector2(0.996937, 1)
+script = ExtResource("4_7or0y")
+offset = Vector2(0, -144)
+curve = SubResource("Curve_vrcd2")
+target_node = NodePath("../MarginContainer")

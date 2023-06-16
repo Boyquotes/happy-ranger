@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SprintFunction" load_steps=2 format=3 uid="uid://bgmdpcxhqoidw"]
+
+[ext_resource type="Script" path="res://src/main/assets/data/function_extend/sprint.gd" id="1_a4a4b"]
+
+[resource]
+script = ExtResource("1_a4a4b")
+speed = 0.0
+name = "SPRINT"
+description = ""
+duration = 0.0
+showed = true

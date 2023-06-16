@@ -1,0 +1,120 @@
+[gd_scene load_steps=18 format=3 uid="uid://b3073hd1erk0u"]
+
+[ext_resource type="Script" path="res://src/main/scene/role/role.gd" id="1_2s0i0"]
+[ext_resource type="Script" path="res://src/main/scene/role/select_rect.gd" id="2_i1ehs"]
+[ext_resource type="Script" path="res://addons/apprentice/node/animation_canvas.gd" id="3_j0lqa"]
+[ext_resource type="Script" path="res://addons/apprentice/node/damage_body_area/body_area.gd" id="4_ghhiy"]
+[ext_resource type="Script" path="res://addons/apprentice/node/node_db.gd" id="5_ufvr3"]
+[ext_resource type="Script" path="res://addons/apprentice/node/property_management.gd" id="6_8ilg3"]
+[ext_resource type="Script" path="res://addons/apprentice/node/data_management/buff_management.gd" id="7_i7g0l"]
+[ext_resource type="Script" path="res://addons/apprentice/node/data_management/data_management.gd" id="8_uab3f"]
+[ext_resource type="Script" path="res://addons/apprentice/node/state_node.gd" id="9_wmrqw"]
+[ext_resource type="Script" path="res://addons/apprentice/node/timeline/skill_actuator.gd" id="10_8ea0i"]
+[ext_resource type="Script" path="res://src/main/scene/role/role_listener.gd" id="11_yb05o"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/sound/config_take_damage_sound.gd" id="13_he0ob"]
+[ext_resource type="Script" path="res://addons/apprentice/resource/resource_sound_config.gd" id="14_3bgsn"]
+[ext_resource type="Script" path="res://addons/fnode_v2/src/core/FRoot.gd" id="14_c2qd5"]
+[ext_resource type="Script" path="res://src/main/scene/role/config/behavior/config_role_died.gd" id="14_mipkt"]
+[ext_resource type="AudioStream" uid="uid://qama6673b46d" path="res://src/main/assets/sound/used/die/CC-DS Blood Splash Hard.wav" id="15_4sqkl"]
+
+[sub_resource type="Resource" id="Resource_01v0o"]
+script = ExtResource("14_3bgsn")
+stream = ExtResource("15_4sqkl")
+from_position = 0.2
+volume_db = 0.0
+pitch_scale = 1.0
+stop_time = 1.0
+loop = false
+
+[node name="role" type="CharacterBody2D"]
+editor_description = "基础角色场景"
+texture_filter = 1
+collision_layer = 3
+collision_mask = 12
+script = ExtResource("1_2s0i0")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="select_rect" type="ReferenceRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("2_i1ehs")
+
+[node name="base_node" type="Node2D" parent="."]
+unique_name_in_owner = true
+use_parent_material = true
+metadata/_edit_lock_ = true
+
+[node name="anim_canvas" type="Node2D" parent="base_node"]
+unique_name_in_owner = true
+use_parent_material = true
+script = ExtResource("3_j0lqa")
+
+[node name="body_area" type="Area2D" parent="base_node/anim_canvas" node_paths=PackedStringArray("host")]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("4_ghhiy")
+host = NodePath("../../..")
+
+[node name="projectile_pos" type="Marker2D" parent="base_node/anim_canvas"]
+unique_name_in_owner = true
+position = Vector2(13, 0)
+
+[node name="node_db" type="Node" parent="base_node" node_paths=PackedStringArray("root")]
+unique_name_in_owner = true
+script = ExtResource("5_ufvr3")
+root = NodePath("../..")
+
+[node name="property_management" type="Node" parent="base_node"]
+unique_name_in_owner = true
+script = ExtResource("6_8ilg3")
+
+[node name="buff_management" type="Node" parent="base_node"]
+unique_name_in_owner = true
+script = ExtResource("7_i7g0l")
+
+[node name="item_management" type="Node" parent="base_node"]
+unique_name_in_owner = true
+script = ExtResource("8_uab3f")
+
+[node name="state_node" type="Node" parent="base_node"]
+unique_name_in_owner = true
+script = ExtResource("9_wmrqw")
+auto_start = true
+
+[node name="skill_actuator" type="Node" parent="base_node"]
+unique_name_in_owner = true
+script = ExtResource("10_8ea0i")
+stages = [0, 1, 0, 0, 0]
+
+[node name="role_listener" type="Node" parent="base_node"]
+unique_name_in_owner = true
+script = ExtResource("11_yb05o")
+
+[node name="config" type="Node" parent="." node_paths=PackedStringArray("actor")]
+unique_name_in_owner = true
+script = ExtResource("14_c2qd5")
+actor = NodePath("..")
+
+[node name="config_take_damage_sound" type="Node" parent="config"]
+script = ExtResource("13_he0ob")
+sound_config = Array[ExtResource("14_3bgsn")]([SubResource("Resource_01v0o")])
+
+[node name="config_role_died" type="Node" parent="config"]
+script = ExtResource("14_mipkt")
+enabled = true

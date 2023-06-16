@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/main/assets/data/test/function_test.gd" id="1_tqlfq"]
+[ext_resource type="Script" path="res://src/main/assets/data/function_extend/missile.gd" id="2_it3u2"]
+[ext_resource type="PackedScene" uid="uid://cyc0xnxd24k0d" path="res://src/main/v1/scene/missile/magic_missile/magic_missile.tscn" id="2_xtpth"]
+
+[sub_resource type="Resource" id="Resource_vsc16"]
+script = ExtResource("2_it3u2")
+velocity = Vector2(0, 0)
+scene = ExtResource("2_xtpth")
+create_position = Vector2(0, 0)
+rotation = 0.0
+_target = NodePath("")
+target_point = Vector2(0, 0)
+name = ""
+description = ""
+delay_time = 0.0
+duration = 1.0
+showed = true
+
+[node name="function_test" type="Node2D"]
+script = ExtResource("1_tqlfq")
+function = SubResource("Resource_vsc16")
+
+[node name="Execute" type="Button" parent="."]
+offset_left = 242.0
+offset_top = 286.0
+offset_right = 355.0
+offset_bottom = 337.0
+toggle_mode = true
+text = "execute"
+
+[connection signal="pressed" from="Execute" to="." method="_on_execute_pressed"]

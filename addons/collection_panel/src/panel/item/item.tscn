@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6pxosabaddjp"]
+
+[ext_resource type="Script" path="res://addons/collection_panel/src/panel/item/item.gd" id="1_3j0fq"]
+
+[node name="item" type="MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = -1
+anchor_right = 0.173611
+anchor_bottom = 0.0354938
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3j0fq")
+metadata/_edit_use_anchors_ = true
+
+[node name="background" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="texture_rect" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="label" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "<path>"
+vertical_alignment = 1
+clip_text = true

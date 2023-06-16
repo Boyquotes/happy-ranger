@@ -1,0 +1,136 @@
+[gd_scene load_steps=14 format=3 uid="uid://1tq81nswefmg"]
+
+[ext_resource type="Script" path="res://src/main/scene/ui/hud/hud.gd" id="1_iscld"]
+[ext_resource type="FontFile" uid="uid://dtm7nsxkwk6ov" path="res://src/main/assets/font/VonwaonBitmap-16px.ttf" id="2_ednu4"]
+[ext_resource type="PackedScene" uid="uid://bhb33n3bo43fx" path="res://src/main/scene/ui/hud/cards/cards.tscn" id="5_gufth"]
+[ext_resource type="PackedScene" uid="uid://bn7ekqmsmvrb6" path="res://src/main/scene/ui/hud/player_info/player_info.tscn" id="5_nee1e"]
+[ext_resource type="PackedScene" uid="uid://5m65rohp2k81" path="res://src/main/scene/ui/hud/event_prompt/event_prompt.tscn" id="6_2ecoe"]
+[ext_resource type="PackedScene" uid="uid://cojawupkjpk02" path="res://src/main/scene/ui/hud/game_info/game_info.tscn" id="6_3ttcv"]
+[ext_resource type="PackedScene" uid="uid://wbhgldawn1fd" path="res://src/main/scene/ui/hud/operating_area/operating_panel.tscn" id="6_xluhp"]
+[ext_resource type="PackedScene" uid="uid://wkmnhmbjpc81" path="res://src/main/scene/ui/hud/select_item/select_items.tscn" id="7_05bv8"]
+[ext_resource type="Script" path="res://addons/apprentice/node/virtual_joystick/virtual_joystick.gd" id="9_hspu8"]
+[ext_resource type="Texture2D" uid="uid://bll41dmeaqogx" path="res://addons/apprentice/node/virtual_joystick/sprites/joystick.png" id="10_6v81t"]
+[ext_resource type="Shader" uid="uid://bmhuw6htma0fm" path="res://src/main/assets/shader/replace_color.tres" id="10_ewcqv"]
+
+[sub_resource type="Theme" id="Theme_jp8ml"]
+default_font = ExtResource("2_ednu4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3y22t"]
+shader = ExtResource("10_ewcqv")
+shader_parameter/enabled = true
+shader_parameter/replace_color = Color(0, 0, 0, 1)
+shader_parameter/to_color = Color(1, 1, 1, 0.196078)
+shader_parameter/threshold = 0.8
+
+[node name="HUD" type="CanvasLayer"]
+editor_description = "主要 HUD 场景"
+script = ExtResource("1_iscld")
+metadata/_edit_vertical_guides_ = [-181.0]
+
+[node name="Control" type="MarginContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_jp8ml")
+metadata/_edit_lock_ = true
+
+[node name="player_info" parent="Control" instance=ExtResource("5_nee1e")]
+layout_mode = 2
+
+[node name="game_info" parent="Control" instance=ExtResource("6_3ttcv")]
+visible = false
+layout_mode = 2
+
+[node name="select_items" parent="Control" instance=ExtResource("7_05bv8")]
+layout_mode = 2
+
+[node name="event_prompt" parent="Control" instance=ExtResource("6_2ecoe")]
+layout_mode = 2
+
+[node name="operating_area" parent="Control" instance=ExtResource("6_xluhp")]
+visible = false
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="cards" parent="Control" instance=ExtResource("5_gufth")]
+visible = false
+layout_mode = 2
+
+[node name="virtual_joystick" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -160.0
+offset_right = 140.0
+offset_bottom = -40.0
+grow_vertical = 0
+script = ExtResource("9_hspu8")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="virtual_joystick"]
+material = SubResource("ShaderMaterial_3y22t")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+fill_mode = 8
+nine_patch_stretch = true
+texture_progress = ExtResource("10_6v81t")
+radial_initial_angle = 10.0
+radial_fill_degrees = 4.0
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="virtual_joystick"]
+material = SubResource("ShaderMaterial_3y22t")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+fill_mode = 8
+nine_patch_stretch = true
+texture_progress = ExtResource("10_6v81t")
+radial_initial_angle = 350.0
+radial_fill_degrees = 4.0
+
+[node name="TextureProgressBar3" type="TextureProgressBar" parent="virtual_joystick"]
+material = SubResource("ShaderMaterial_3y22t")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+fill_mode = 8
+nine_patch_stretch = true
+texture_progress = ExtResource("10_6v81t")
+radial_initial_angle = 50.0
+radial_fill_degrees = 4.0
+
+[node name="TextureProgressBar4" type="TextureProgressBar" parent="virtual_joystick"]
+material = SubResource("ShaderMaterial_3y22t")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+fill_mode = 8
+nine_patch_stretch = true
+texture_progress = ExtResource("10_6v81t")
+radial_initial_angle = 310.0
+radial_fill_degrees = 4.0
+
+[connection signal="analogic_process" from="virtual_joystick" to="." method="_on_virtual_joystick_analogic_process"]

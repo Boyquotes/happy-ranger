@@ -1,0 +1,3304 @@
+[gd_scene load_steps=310 format=3 uid="uid://b1vtf61fot1tg"]
+
+[ext_resource type="Script" path="res://src/main/assets/data/item/items_icon.gd" id="1_o6pwm"]
+[ext_resource type="Texture2D" uid="uid://tn7opm0ung0w" path="res://src/main/assets/texture/used/item/treasure/bag_coins.png" id="2_vc2a3"]
+[ext_resource type="Texture2D" uid="uid://cbeih71inb0yi" path="res://src/main/assets/texture/used/item/treasure/coins_hud.png" id="3_7dto5"]
+[ext_resource type="Texture2D" uid="uid://p0ue88iohm67" path="res://src/main/assets/texture/used/item/treasure/diamonds.png" id="4_qlfns"]
+[ext_resource type="Texture2D" uid="uid://c6tw2vnyq3gxb" path="res://src/main/assets/texture/used/item/potionl/potion_green.png" id="5_pcjoy"]
+[ext_resource type="Texture2D" uid="uid://bh4235mvddy5y" path="res://src/main/assets/texture/used/item/potionl/potion_red.png" id="6_wugw7"]
+[ext_resource type="Texture2D" uid="uid://dyq7kdnbope31" path="res://src/main/assets/texture/used/item/potionl/potion_yellow.png" id="7_ndrdj"]
+[ext_resource type="Texture2D" uid="uid://0y122kf4alpr" path="res://src/main/assets/texture/used/item/potionl/large/PotionL_Blue.png" id="8_j8mdk"]
+[ext_resource type="Texture2D" uid="uid://dtiqoevq8v0ak" path="res://src/main/assets/texture/used/item/potionl/large/PotionL_Green.png" id="9_udv3g"]
+[ext_resource type="Texture2D" uid="uid://dsjonjc01uwnf" path="res://src/main/assets/texture/used/item/potionl/large/PotionL_Purple.png" id="10_qvxm8"]
+[ext_resource type="Texture2D" uid="uid://b1pprymuve8ur" path="res://src/main/assets/texture/used/item/potionl/large/PotionL_Red.png" id="11_hhfpv"]
+[ext_resource type="Texture2D" uid="uid://cro7txm5alirj" path="res://src/main/assets/texture/used/item/potionl/large/PotionL_Yellow.png" id="12_j81t7"]
+[ext_resource type="Texture2D" uid="uid://84ple83st4fl" path="res://src/main/assets/texture/used/item/potionl/small/PotionS_Blue.png" id="13_ev6im"]
+[ext_resource type="Texture2D" uid="uid://26iiy080xh0c" path="res://src/main/assets/texture/used/item/potionl/small/PotionS_Green.png" id="14_po8iw"]
+[ext_resource type="Texture2D" uid="uid://cowlhvkllblxk" path="res://src/main/assets/texture/used/item/potionl/small/PotionS_Purple.png" id="15_bvvey"]
+[ext_resource type="Texture2D" uid="uid://dn7p6gbfuerdx" path="res://src/main/assets/texture/used/item/potionl/small/PotionS_Red.png" id="16_xme1s"]
+[ext_resource type="Texture2D" uid="uid://duweb8p1afsws" path="res://src/main/assets/texture/used/item/potionl/small/PotionS_Yellow.png" id="17_4s7ej"]
+[ext_resource type="Texture2D" uid="uid://cifgk4k733i41" path="res://src/main/assets/texture/used/item/shield/shield_bomb.tres" id="18_et8hv"]
+[ext_resource type="Texture2D" uid="uid://cbwhhgd8yucd7" path="res://src/main/assets/texture/used/item/shield/shield_casque.tres" id="19_m5sla"]
+[ext_resource type="Texture2D" uid="uid://rbsvadkyo5kr" path="res://src/main/assets/texture/used/item/shield/shield_heart_green.tres" id="20_mm5bj"]
+[ext_resource type="Texture2D" uid="uid://bf4xjkllewfen" path="res://src/main/assets/texture/used/item/weapon/icon432.png" id="20_teral"]
+[ext_resource type="Texture2D" uid="uid://c28fsbmeq04m1" path="res://src/main/assets/texture/used/item/weapon/icon433.png" id="21_8oiq6"]
+[ext_resource type="Texture2D" uid="uid://bw1wsw5gol0f7" path="res://src/main/assets/texture/used/item/shield/shield_shoe.tres" id="21_gcxdy"]
+[ext_resource type="Texture2D" uid="uid://m2pna0l3317f" path="res://src/main/assets/texture/used/item/weapon/icon434.png" id="22_frjew"]
+[ext_resource type="Texture2D" uid="uid://dnnjta0n54cdk" path="res://src/main/assets/texture/used/item/weapon/02/goblin_knife.png" id="22_q315n"]
+[ext_resource type="Texture2D" uid="uid://3ithl43jglrh" path="res://src/main/assets/texture/used/item/weapon/icon435.png" id="23_7on2n"]
+[ext_resource type="Texture2D" uid="uid://sr20vfe7kpoq" path="res://src/main/assets/texture/used/item/weapon/icon436.png" id="24_gysdj"]
+[ext_resource type="Texture2D" uid="uid://dig3env56icxr" path="res://src/main/assets/texture/used/item/weapon/icon437.png" id="25_t2p7e"]
+[ext_resource type="Texture2D" uid="uid://4i4ftsuekoyb" path="res://src/main/assets/texture/used/item/weapon/icon438.png" id="26_3mryw"]
+[ext_resource type="Texture2D" uid="uid://c6d5ex6wahke4" path="res://src/main/assets/texture/used/item/weapon/icon439.png" id="27_v4fp7"]
+[ext_resource type="Texture2D" uid="uid://b34dq4akvonws" path="res://src/main/assets/texture/used/item/weapon/icon440.png" id="28_gi6g5"]
+[ext_resource type="Texture2D" uid="uid://c4w2cisb1gqj7" path="res://src/main/assets/texture/used/item/weapon/icon441.png" id="29_0hqcd"]
+[ext_resource type="Texture2D" uid="uid://en34k8oj0ggh" path="res://src/main/assets/texture/used/item/weapon/icon442.png" id="30_em4o0"]
+[ext_resource type="Texture2D" uid="uid://cy1p0u1kxmwo" path="res://src/main/assets/texture/used/item/weapon/icon443.png" id="31_xwbsk"]
+[ext_resource type="Texture2D" uid="uid://per3y0y86u10" path="res://src/main/assets/texture/used/item/weapon/icon444.png" id="32_57ok6"]
+[ext_resource type="Texture2D" uid="uid://cei4siw8c1e2r" path="res://src/main/assets/texture/used/item/weapon/icon445.png" id="33_yqcbe"]
+[ext_resource type="Texture2D" uid="uid://bvycce2txoxms" path="res://src/main/assets/texture/used/item/weapon/icon446.png" id="34_0osmg"]
+[ext_resource type="Texture2D" uid="uid://c04vk6f8cwjlh" path="res://src/main/assets/texture/used/item/weapon/icon447.png" id="35_g0neg"]
+[ext_resource type="Texture2D" uid="uid://ciaj64octfu1s" path="res://src/main/assets/texture/used/item/weapon/icon448.png" id="36_8tugu"]
+[ext_resource type="Texture2D" uid="uid://cwqji3jptcrxv" path="res://src/main/assets/texture/used/item/weapon/icon449.png" id="37_mf4bu"]
+[ext_resource type="Texture2D" uid="uid://d02lo7ex152og" path="res://src/main/assets/texture/used/item/weapon/icon450.png" id="38_nu1g0"]
+[ext_resource type="Texture2D" uid="uid://d12m1760tnxx5" path="res://src/main/assets/texture/used/item/weapon/icon451.png" id="39_kof4k"]
+[ext_resource type="Texture2D" uid="uid://bfvwxrq1yxuwr" path="res://src/main/assets/texture/used/item/weapon/icon452.png" id="40_ft7ep"]
+[ext_resource type="Texture2D" uid="uid://cd5eayof7hccb" path="res://src/main/assets/texture/used/item/weapon/icon453.png" id="41_wxpw1"]
+[ext_resource type="Texture2D" uid="uid://bdglh5fg34ufk" path="res://src/main/assets/texture/used/item/weapon/icon454.png" id="42_6crrs"]
+[ext_resource type="Texture2D" uid="uid://bqa8uq88mys7m" path="res://src/main/assets/texture/used/item/weapon/icon455.png" id="43_d1uld"]
+[ext_resource type="Texture2D" uid="uid://dwxfucnu58rxv" path="res://src/main/assets/texture/used/item/weapon/icon456.png" id="44_u5npo"]
+[ext_resource type="Texture2D" uid="uid://bvm7pb05jhj7i" path="res://src/main/assets/texture/used/item/weapon/icon457.png" id="45_8oj4h"]
+[ext_resource type="Texture2D" uid="uid://cd6udf52v5gqt" path="res://src/main/assets/texture/used/item/weapon/icon458.png" id="46_67v7n"]
+[ext_resource type="Texture2D" uid="uid://2wv0xlfg3s35" path="res://src/main/assets/texture/used/item/weapon/icon459.png" id="47_x12xm"]
+[ext_resource type="Texture2D" uid="uid://bi4tswqt6uv1x" path="res://src/main/assets/texture/used/item/weapon/icon460.png" id="48_7rjrd"]
+[ext_resource type="Texture2D" uid="uid://cfgihiiip5q7v" path="res://src/main/assets/texture/used/item/weapon/icon461.png" id="49_q1f0v"]
+[ext_resource type="Texture2D" uid="uid://cpum67fu0tr4f" path="res://src/main/assets/texture/used/item/weapon/icon462.png" id="50_6r0tx"]
+[ext_resource type="Texture2D" uid="uid://dsqd8ps4to07p" path="res://src/main/assets/texture/used/item/weapon/icon463.png" id="51_owj21"]
+[ext_resource type="Texture2D" uid="uid://by4xopadrhdlv" path="res://src/main/assets/texture/used/item/weapon/icon464.png" id="52_r2uky"]
+[ext_resource type="Texture2D" uid="uid://q0ml7vdhduf" path="res://src/main/assets/texture/used/item/weapon/icon465.png" id="53_ggr6p"]
+[ext_resource type="Texture2D" uid="uid://dyo2fai0u8f4v" path="res://src/main/assets/texture/used/item/weapon/icon466.png" id="54_hhme2"]
+[ext_resource type="Texture2D" uid="uid://dt1sfnf5uqd4c" path="res://src/main/assets/texture/used/item/weapon/icon467.png" id="55_8wlbu"]
+[ext_resource type="Texture2D" uid="uid://eyjfe0oig3yb" path="res://src/main/assets/texture/used/item/weapon/icon468.png" id="56_mq3ma"]
+[ext_resource type="Texture2D" uid="uid://bna16o1jxkt72" path="res://src/main/assets/texture/used/item/weapon/icon469.png" id="57_is4co"]
+[ext_resource type="Texture2D" uid="uid://ii51iqnsduq6" path="res://src/main/assets/texture/used/item/weapon/icon470.png" id="58_7b1oc"]
+[ext_resource type="Texture2D" uid="uid://cg6d0d5mtx1wo" path="res://src/main/assets/texture/used/item/weapon/icon471.png" id="59_t55jt"]
+[ext_resource type="Texture2D" uid="uid://b3u0jdi0hotnm" path="res://src/main/assets/texture/used/item/weapon/icon472.png" id="60_ko18r"]
+[ext_resource type="Texture2D" uid="uid://bi64230slcpqa" path="res://src/main/assets/texture/used/item/weapon/icon473.png" id="61_lsrog"]
+[ext_resource type="Texture2D" uid="uid://c5ys3numy81jf" path="res://src/main/assets/texture/used/item/weapon/icon474.png" id="62_m7i4h"]
+[ext_resource type="Texture2D" uid="uid://cdjbaufbivjwj" path="res://src/main/assets/texture/used/item/weapon/icon475.png" id="63_yfcne"]
+[ext_resource type="Texture2D" uid="uid://xtmew1oepbmy" path="res://src/main/assets/texture/used/item/weapon/icon476.png" id="64_scph1"]
+[ext_resource type="Texture2D" uid="uid://v65isok24daf" path="res://src/main/assets/texture/used/item/weapon/icon477.png" id="65_behpo"]
+[ext_resource type="Texture2D" uid="uid://1bgqcgu8lf0k" path="res://src/main/assets/texture/used/item/weapon/icon478.png" id="66_fjvq7"]
+[ext_resource type="Texture2D" uid="uid://cjv3v2gd1i86" path="res://src/main/assets/texture/used/item/weapon/icon479.png" id="67_kfsew"]
+[ext_resource type="Texture2D" uid="uid://bkvd2oll3jhlu" path="res://src/main/assets/texture/used/item/weapon/icon480.png" id="68_728ne"]
+[ext_resource type="Texture2D" uid="uid://bckqj74i24hp8" path="res://src/main/assets/texture/used/item/weapon/icon481.png" id="69_mqr3l"]
+[ext_resource type="Texture2D" uid="uid://ccmj70jb7xfkm" path="res://src/main/assets/texture/used/item/weapon/icon482.png" id="70_xpedq"]
+[ext_resource type="Texture2D" uid="uid://d3w38f3yexqst" path="res://src/main/assets/texture/used/item/weapon/icon483.png" id="71_n6n7k"]
+[ext_resource type="Texture2D" uid="uid://mqntp2bshcus" path="res://src/main/assets/texture/used/item/weapon/icon484.png" id="72_0rau5"]
+[ext_resource type="Texture2D" uid="uid://c0hjq1crls3j6" path="res://src/main/assets/texture/used/item/weapon/icon485.png" id="73_rthya"]
+[ext_resource type="Texture2D" uid="uid://gbc2mvl5g3f6" path="res://src/main/assets/texture/used/item/weapon/icon486.png" id="74_p8mom"]
+[ext_resource type="Texture2D" uid="uid://hg1dlwyc431d" path="res://src/main/assets/texture/used/item/weapon/icon487.png" id="75_i5o21"]
+[ext_resource type="Texture2D" uid="uid://b3ek863dccuoa" path="res://src/main/assets/texture/used/item/weapon/icon488.png" id="76_jf6y5"]
+[ext_resource type="Texture2D" uid="uid://ctctmi2og0qie" path="res://src/main/assets/texture/used/item/weapon/icon489.png" id="77_jxg45"]
+[ext_resource type="Texture2D" uid="uid://ddwafojtgrnfq" path="res://src/main/assets/texture/used/item/weapon/icon490.png" id="78_n5njc"]
+[ext_resource type="Texture2D" uid="uid://b6aavmqygxo2k" path="res://src/main/assets/texture/used/item/weapon/icon491.png" id="79_oskwx"]
+[ext_resource type="Texture2D" uid="uid://csekvvva08kqb" path="res://src/main/assets/texture/used/item/weapon/icon492.png" id="80_u7kvj"]
+[ext_resource type="Texture2D" uid="uid://dctbuainxce8j" path="res://src/main/assets/texture/used/item/weapon/icon493.png" id="81_6uctr"]
+[ext_resource type="Texture2D" uid="uid://clv6l2vdqbfxi" path="res://src/main/assets/texture/used/item/weapon/icon494.png" id="82_s462i"]
+[ext_resource type="Texture2D" uid="uid://yvdc4lbctoxw" path="res://src/main/assets/texture/used/item/weapon/icon495.png" id="83_glhac"]
+[ext_resource type="Texture2D" uid="uid://di03w3lafi6yy" path="res://src/main/assets/texture/used/item/weapon/icon496.png" id="84_lllqa"]
+[ext_resource type="Texture2D" uid="uid://cdvx5ud248ciq" path="res://src/main/assets/texture/used/item/weapon/icon497.png" id="85_kydiy"]
+[ext_resource type="Texture2D" uid="uid://cuikl5ujm3oep" path="res://src/main/assets/texture/used/item/weapon/icon498.png" id="86_qhvhp"]
+[ext_resource type="Texture2D" uid="uid://rshluhxmh4mk" path="res://src/main/assets/texture/used/item/weapon/icon499.png" id="87_lcgux"]
+[ext_resource type="Texture2D" uid="uid://bukpxpsf7mkjf" path="res://src/main/assets/texture/used/item/weapon/icon500.png" id="88_l7o1q"]
+[ext_resource type="Texture2D" uid="uid://cs15ecmy141qu" path="res://src/main/assets/texture/used/item/weapon/icon501.png" id="89_ixnry"]
+[ext_resource type="Texture2D" uid="uid://bus0ln4ruonux" path="res://src/main/assets/texture/used/item/weapon/icon502.png" id="90_1xek6"]
+[ext_resource type="Texture2D" uid="uid://c7n85qbbfj0yw" path="res://src/main/assets/texture/used/item/weapon/icon503.png" id="91_qtd5e"]
+[ext_resource type="Texture2D" uid="uid://ck34p67oxd4c5" path="res://src/main/assets/texture/used/item/weapon/icon504.png" id="92_78kk3"]
+[ext_resource type="Texture2D" uid="uid://bn68c3ydjma2q" path="res://src/main/assets/texture/used/item/weapon/icon505.png" id="93_bid03"]
+[ext_resource type="Texture2D" uid="uid://bt2ha3rk7ya2e" path="res://src/main/assets/texture/used/item/weapon/icon506.png" id="94_0nt50"]
+[ext_resource type="Texture2D" uid="uid://da07lbcy4gx22" path="res://src/main/assets/texture/used/item/weapon/icon507.png" id="95_8hnxv"]
+[ext_resource type="Texture2D" uid="uid://6xd3icl6og8i" path="res://src/main/assets/texture/used/item/weapon/icon508.png" id="96_l1x5t"]
+[ext_resource type="Texture2D" uid="uid://bhqo3psysmos3" path="res://src/main/assets/texture/used/item/weapon/icon509.png" id="97_ip1d6"]
+[ext_resource type="Texture2D" uid="uid://dgrxb1rfb5pos" path="res://src/main/assets/texture/used/item/weapon/icon510.png" id="98_c0uix"]
+[ext_resource type="Texture2D" uid="uid://0o6h07p68ui2" path="res://src/main/assets/texture/used/item/weapon/icon511.png" id="99_18601"]
+[ext_resource type="Texture2D" uid="uid://cd5gpdlhpiwfj" path="res://src/main/assets/texture/used/item/weapon/icon512.png" id="100_0klyu"]
+[ext_resource type="Texture2D" uid="uid://ryvh2lqbhnsp" path="res://src/main/assets/texture/used/item/weapon/icon513.png" id="101_nxl4b"]
+[ext_resource type="Texture2D" uid="uid://isi82k8vshk6" path="res://src/main/assets/texture/used/item/weapon/icon514.png" id="102_ann8m"]
+[ext_resource type="Texture2D" uid="uid://3cufchh8pgbr" path="res://src/main/assets/texture/used/item/weapon/icon515.png" id="103_8bouv"]
+[ext_resource type="Texture2D" uid="uid://c7x0p41htxemg" path="res://src/main/assets/texture/used/item/weapon/icon516.png" id="104_uae26"]
+[ext_resource type="Texture2D" uid="uid://cxyddqbnqqs60" path="res://src/main/assets/texture/used/item/weapon/icon517.png" id="105_xwsf3"]
+[ext_resource type="Texture2D" uid="uid://ciq3hja0conqt" path="res://src/main/assets/texture/used/item/weapon/icon518.png" id="106_60m8f"]
+[ext_resource type="Texture2D" uid="uid://c61vlfvhod7c" path="res://src/main/assets/texture/used/item/weapon/icon519.png" id="107_7duhy"]
+[ext_resource type="Texture2D" uid="uid://calck10usaqbg" path="res://src/main/assets/texture/used/item/weapon/icon520.png" id="108_bitv2"]
+[ext_resource type="Texture2D" uid="uid://p83txromji23" path="res://src/main/assets/texture/used/item/weapon/icon521.png" id="109_bg3bs"]
+[ext_resource type="Texture2D" uid="uid://dpi5f1w3jjqr1" path="res://src/main/assets/texture/used/item/weapon/icon522.png" id="110_rcn2b"]
+[ext_resource type="Texture2D" uid="uid://cf3vc5rdjokmu" path="res://src/main/assets/texture/used/item/weapon/icon523.png" id="111_3nct1"]
+[ext_resource type="Texture2D" uid="uid://cqsdgpsmea0om" path="res://src/main/assets/texture/used/item/weapon/icon524.png" id="112_6n7yk"]
+[ext_resource type="Texture2D" uid="uid://bwk11ntsxqadc" path="res://src/main/assets/texture/used/item/weapon/icon525.png" id="113_0cvgm"]
+[ext_resource type="Texture2D" uid="uid://wd65r22sfw3d" path="res://src/main/assets/texture/used/item/weapon/icon526.png" id="114_l8145"]
+[ext_resource type="Texture2D" uid="uid://doia0tsocs5mc" path="res://src/main/assets/texture/used/item/weapon/icon527.png" id="115_vemcu"]
+[ext_resource type="Texture2D" uid="uid://cj1t0ni67esmx" path="res://src/main/assets/texture/used/item/weapon/icon528.png" id="116_xwbhh"]
+[ext_resource type="Texture2D" uid="uid://csba3sek8x3u6" path="res://src/main/assets/texture/used/item/weapon/icon529.png" id="117_81p4s"]
+[ext_resource type="Texture2D" uid="uid://j5d7k5srqkxh" path="res://src/main/assets/texture/used/item/weapon/icon530.png" id="118_4ax4o"]
+[ext_resource type="Texture2D" uid="uid://dy0hjl6khbdp2" path="res://src/main/assets/texture/used/item/weapon/icon531.png" id="119_vh8y4"]
+[ext_resource type="Texture2D" uid="uid://bl2r3gmyj7tho" path="res://src/main/assets/texture/used/item/weapon/icon532.png" id="120_voikt"]
+[ext_resource type="Texture2D" uid="uid://ds6jxt1ub8uv4" path="res://src/main/assets/texture/used/item/weapon/icon533.png" id="121_71fur"]
+[ext_resource type="Texture2D" uid="uid://juhuv3mi8g0w" path="res://src/main/assets/texture/used/item/weapon/icon534.png" id="122_w5qnk"]
+[ext_resource type="Texture2D" uid="uid://k0k3m3nn51rc" path="res://src/main/assets/texture/used/item/weapon/icon535.png" id="123_nmf8i"]
+[ext_resource type="Texture2D" uid="uid://clrqow2qig23k" path="res://src/main/assets/texture/used/item/weapon/icon536.png" id="124_wnt3n"]
+[ext_resource type="Texture2D" uid="uid://du5g1ec6bg3dp" path="res://src/main/assets/texture/used/item/weapon/icon537.png" id="125_2vyrn"]
+[ext_resource type="Texture2D" uid="uid://m1clcxuk8jp8" path="res://src/main/assets/texture/used/item/weapon/icon538.png" id="126_a5uti"]
+[ext_resource type="Texture2D" uid="uid://6voayvw0m784" path="res://src/main/assets/texture/used/item/weapon/icon539.png" id="127_dqies"]
+[ext_resource type="Texture2D" uid="uid://ca7vloupxt0hj" path="res://src/main/assets/texture/used/item/weapon/icon540.png" id="128_oivw7"]
+[ext_resource type="Texture2D" uid="uid://b26xxdbu48mij" path="res://src/main/assets/texture/used/item/weapon/icon541.png" id="129_y60v7"]
+[ext_resource type="Texture2D" uid="uid://cy8oj6so0t6nk" path="res://src/main/assets/texture/used/item/weapon/icon542.png" id="130_mfd0r"]
+[ext_resource type="Texture2D" uid="uid://dvnknt58genf5" path="res://src/main/assets/texture/used/item/weapon/icon543.png" id="131_jnpbe"]
+[ext_resource type="Texture2D" uid="uid://bwkskkw6ogrjf" path="res://src/main/assets/texture/used/item/weapon/icon544.png" id="132_wrvfg"]
+[ext_resource type="Texture2D" uid="uid://da0uow88bc4sy" path="res://src/main/assets/texture/used/item/weapon/icon545.png" id="133_2ty0c"]
+[ext_resource type="Texture2D" uid="uid://kurrtjc25c7b" path="res://src/main/assets/texture/used/item/weapon/icon546.png" id="134_dcplq"]
+[ext_resource type="Texture2D" uid="uid://bn5xf58xh6m8" path="res://src/main/assets/texture/used/item/weapon/icon547.png" id="135_1t0y1"]
+[ext_resource type="Texture2D" uid="uid://dau4kka5w85e5" path="res://src/main/assets/texture/used/item/weapon/icon548.png" id="136_vr6jv"]
+[ext_resource type="Texture2D" uid="uid://cfokcc603rs1y" path="res://src/main/assets/texture/used/item/weapon/icon549.png" id="137_8gfnk"]
+[ext_resource type="Texture2D" uid="uid://bh5xn25pt0k8y" path="res://src/main/assets/texture/used/item/weapon/icon550.png" id="138_2wbbx"]
+[ext_resource type="Texture2D" uid="uid://7br57ms14c7w" path="res://src/main/assets/texture/used/item/weapon/02/Item_00.png" id="144_1487u"]
+[ext_resource type="Texture2D" uid="uid://cymion2ew6pyy" path="res://src/main/assets/texture/used/item/weapon/02/Item_01.png" id="145_jy0od"]
+[ext_resource type="Texture2D" uid="uid://cc4j7np4vq7p8" path="res://src/main/assets/texture/used/item/weapon/02/Item_02.png" id="146_l5ww5"]
+[ext_resource type="Texture2D" uid="uid://b7htx40mamtls" path="res://src/main/assets/texture/used/item/weapon/02/Item_03.png" id="147_05q3a"]
+[ext_resource type="Texture2D" uid="uid://o5q4l0d2x3no" path="res://src/main/assets/texture/used/item/weapon/02/Item_04.png" id="148_k22iv"]
+[ext_resource type="Texture2D" uid="uid://dtnw3dki2tyw7" path="res://src/main/assets/texture/used/item/weapon/02/Item_05.png" id="149_e4wye"]
+[ext_resource type="Texture2D" uid="uid://b6iimp5ysl11l" path="res://src/main/assets/texture/used/item/weapon/02/Item_06.png" id="150_b11bs"]
+[ext_resource type="Texture2D" uid="uid://dg27f80itkouo" path="res://src/main/assets/texture/used/item/weapon/02/Item_07.png" id="151_05vfk"]
+[ext_resource type="Texture2D" uid="uid://cn3p78f3xcwga" path="res://src/main/assets/texture/used/item/weapon/02/Item_08.png" id="152_i2gcm"]
+[ext_resource type="Texture2D" uid="uid://cuq3nnr7wdyvf" path="res://src/main/assets/texture/used/item/weapon/02/Item_09.png" id="153_x3mq7"]
+[ext_resource type="Texture2D" uid="uid://dy2rbijecgi02" path="res://src/main/assets/texture/used/item/weapon/02/Item_10.png" id="154_sswts"]
+[ext_resource type="Texture2D" uid="uid://c1tmyj6dvetoh" path="res://src/main/assets/texture/used/item/weapon/02/Item_11.png" id="155_kupfj"]
+[ext_resource type="Texture2D" uid="uid://cb50iomra1eh2" path="res://src/main/assets/texture/used/item/weapon/02/Item_12.png" id="156_sn4tr"]
+[ext_resource type="Texture2D" uid="uid://128fiwhjvxhy" path="res://src/main/assets/texture/used/item/weapon/02/Item_13.png" id="157_efqvb"]
+[ext_resource type="Texture2D" uid="uid://b5w1h6qxjqe7n" path="res://src/main/assets/texture/used/item/weapon/02/Item_14.png" id="158_nsxsy"]
+[ext_resource type="Texture2D" uid="uid://k30dn3k7y7lo" path="res://src/main/assets/texture/used/item/weapon/02/Item_15.png" id="159_2s510"]
+[ext_resource type="Texture2D" uid="uid://bj0vn074j2g8c" path="res://src/main/assets/texture/used/item/weapon/02/Item_16.png" id="160_neqi2"]
+[ext_resource type="Texture2D" uid="uid://x0qbkb22wmky" path="res://src/main/assets/texture/used/item/weapon/02/Item_17.png" id="161_dj5mq"]
+[ext_resource type="Texture2D" uid="uid://bec1pqe7aukvc" path="res://src/main/assets/texture/used/item/weapon/02/Item_18.png" id="162_fbebk"]
+[ext_resource type="Texture2D" uid="uid://bcxw3lhrncgqo" path="res://src/main/assets/texture/used/item/weapon/02/Item_19.png" id="163_tjamh"]
+[ext_resource type="Texture2D" uid="uid://cxstvct6ln28u" path="res://src/main/assets/texture/used/item/weapon/02/Item_21.png" id="164_s5w2w"]
+[ext_resource type="Texture2D" uid="uid://bigwkhlanbgxx" path="res://src/main/assets/texture/used/item/weapon/02/Item_23.png" id="165_n17r8"]
+[ext_resource type="Texture2D" uid="uid://dj5d1pw4kehhk" path="res://src/main/assets/texture/used/item/weapon/02/Item_24.png" id="166_4lojj"]
+[ext_resource type="Texture2D" uid="uid://b882y2yrhbrb4" path="res://src/main/assets/texture/used/item/weapon/02/Item_25.png" id="167_0wvs0"]
+[ext_resource type="Texture2D" uid="uid://le5drj8h0pr3" path="res://src/main/assets/texture/used/item/weapon/02/Item_26.png" id="168_me0gp"]
+[ext_resource type="Texture2D" uid="uid://bhp3v1m4al0la" path="res://src/main/assets/texture/used/item/weapon/02/Item_27.png" id="169_1m4as"]
+[ext_resource type="Texture2D" uid="uid://cjtxnllruh5q2" path="res://src/main/assets/texture/used/item/weapon/02/Item_28.png" id="170_eei70"]
+[ext_resource type="Texture2D" uid="uid://drjhastsj52pa" path="res://src/main/assets/texture/used/item/weapon/02/Item_29.png" id="171_7bksp"]
+[ext_resource type="Texture2D" uid="uid://b6t0k7sajb84d" path="res://src/main/assets/texture/used/item/weapon/02/Item_30.png" id="172_p7gdi"]
+[ext_resource type="Texture2D" uid="uid://cqb8lcyrc4ju7" path="res://src/main/assets/texture/used/item/weapon/02/Item_31.png" id="173_kpoeo"]
+[ext_resource type="Texture2D" uid="uid://c8kkanbrcqa34" path="res://src/main/assets/texture/used/item/weapon/02/Item__00.png" id="174_a2ia1"]
+[ext_resource type="Texture2D" uid="uid://pxf0erdxotmx" path="res://src/main/assets/texture/used/item/weapon/02/Item__01.png" id="175_rvsl5"]
+[ext_resource type="Texture2D" uid="uid://dq4sqv0wj76sd" path="res://src/main/assets/texture/used/item/weapon/02/Item__02.png" id="176_lupwq"]
+[ext_resource type="Texture2D" uid="uid://bn4hsj7abaqao" path="res://src/main/assets/texture/used/item/weapon/02/Item__03.png" id="177_tsa0p"]
+[ext_resource type="Texture2D" uid="uid://ddpijostyiul0" path="res://src/main/assets/texture/used/item/weapon/02/Item__04.png" id="178_3gur2"]
+[ext_resource type="Texture2D" uid="uid://dejf33vama437" path="res://src/main/assets/texture/used/item/weapon/02/Item__05.png" id="179_uw4xk"]
+[ext_resource type="Texture2D" uid="uid://bhpayqr4b167n" path="res://src/main/assets/texture/used/item/weapon/02/Item__06.png" id="180_2hwrl"]
+[ext_resource type="Texture2D" uid="uid://bh0exlrx5pe8y" path="res://src/main/assets/texture/used/item/weapon/02/Item__07.png" id="181_ysgmk"]
+[ext_resource type="Texture2D" uid="uid://dfnkxg1o26qih" path="res://src/main/assets/texture/used/item/weapon/02/Item__08.png" id="182_ukg7a"]
+[ext_resource type="Texture2D" uid="uid://bmo3qvgkgbovd" path="res://src/main/assets/texture/used/item/weapon/02/Item__09.png" id="183_huxy1"]
+[ext_resource type="Texture2D" uid="uid://bqacvikfi0wvv" path="res://src/main/assets/texture/used/item/weapon/02/Item__10.png" id="184_215ym"]
+[ext_resource type="Texture2D" uid="uid://datdi65pt7c1m" path="res://src/main/assets/texture/used/item/weapon/02/Item__11.png" id="185_307cn"]
+[ext_resource type="Texture2D" uid="uid://brhgydpbhi875" path="res://src/main/assets/texture/used/item/weapon/02/Item__12.png" id="186_y0esm"]
+[ext_resource type="Texture2D" uid="uid://creg1b6ofe5i4" path="res://src/main/assets/texture/used/item/weapon/02/Item__13.png" id="187_cpdvc"]
+[ext_resource type="Texture2D" uid="uid://g8n7gpq7rntq" path="res://src/main/assets/texture/used/item/weapon/02/Item__14.png" id="188_qc861"]
+[ext_resource type="Texture2D" uid="uid://o4lsgjpa6nk7" path="res://src/main/assets/texture/used/item/weapon/02/Item__15.png" id="189_v17bf"]
+[ext_resource type="Texture2D" uid="uid://ftsy8lmk3uw7" path="res://src/main/assets/texture/used/item/weapon/02/Item__16.png" id="190_pt1ms"]
+[ext_resource type="Texture2D" uid="uid://ddgux8v6erapo" path="res://src/main/assets/texture/used/item/weapon/02/Item__17.png" id="191_byin1"]
+[ext_resource type="Texture2D" uid="uid://d2ops3qtyp0r1" path="res://src/main/assets/texture/used/item/weapon/02/Item__18.png" id="192_dq2jd"]
+[ext_resource type="Texture2D" uid="uid://b8obexcuho2b4" path="res://src/main/assets/texture/used/item/weapon/02/Item__19.png" id="193_vjwfh"]
+[ext_resource type="Texture2D" uid="uid://cgqvcnja7a27r" path="res://src/main/assets/texture/used/item/weapon/02/Item__20.png" id="194_4awi5"]
+[ext_resource type="Texture2D" uid="uid://c14tvvdwkqejw" path="res://src/main/assets/texture/used/item/weapon/02/Item_20.png" id="195_7kh6t"]
+[ext_resource type="Texture2D" uid="uid://ge07lyl3y35f" path="res://src/main/assets/texture/used/item/weapon/02/Item__21.png" id="195_fn2pw"]
+[ext_resource type="Texture2D" uid="uid://dkcqs7c6kkuuf" path="res://src/main/assets/texture/used/item/weapon/02/Item_22.png" id="196_gfg2w"]
+[ext_resource type="Texture2D" uid="uid://brodxciw10g5q" path="res://src/main/assets/texture/used/item/weapon/02/Item__22.png" id="196_il8s7"]
+[ext_resource type="Texture2D" uid="uid://ivo1ajdhduuy" path="res://src/main/assets/texture/used/item/weapon/02/Item__23.png" id="197_62b2a"]
+[ext_resource type="Texture2D" uid="uid://bm5dbibw7mn17" path="res://src/main/assets/texture/used/item/ornament/Item_45.png" id="198_0uwrx"]
+[ext_resource type="Texture2D" uid="uid://61drobti6oj2" path="res://src/main/assets/texture/used/item/ornament/Item_46.png" id="199_mh8o4"]
+[ext_resource type="Texture2D" uid="uid://c4gcpyvi8hngc" path="res://src/main/assets/texture/used/item/ornament/Item_47.png" id="200_ip5uw"]
+[ext_resource type="Texture2D" uid="uid://cljxcytxd7gei" path="res://src/main/assets/texture/used/item/ornament/Item_48.png" id="201_r67kp"]
+[ext_resource type="Texture2D" uid="uid://o32p1ioyk24i" path="res://src/main/assets/texture/used/item/ornament/Item_49.png" id="202_gu40f"]
+[ext_resource type="Texture2D" uid="uid://dqmawu61k5cv8" path="res://src/main/assets/texture/used/item/ornament/Item_50.png" id="203_w5lxj"]
+[ext_resource type="Texture2D" uid="uid://dnfd45pa6wd2u" path="res://src/main/assets/texture/used/item/ornament/Item_51.png" id="204_a7swo"]
+[ext_resource type="Texture2D" uid="uid://cwo6dr646wjbv" path="res://src/main/assets/texture/used/item/ornament/Item_68.png" id="205_1lx8o"]
+[ext_resource type="Texture2D" uid="uid://bh0k40ishyw0w" path="res://src/main/assets/texture/used/item/ornament/Item_69.png" id="206_dlabf"]
+[ext_resource type="Texture2D" uid="uid://doqc6d4v3ydhb" path="res://src/main/assets/texture/used/item/ornament/Item_70.png" id="207_g11v2"]
+[ext_resource type="Texture2D" uid="uid://bgrxbt4u1p1jv" path="res://src/main/assets/texture/used/item/ornament/Item_71.png" id="208_ia3rr"]
+[ext_resource type="Texture2D" uid="uid://dbaojuoan8l10" path="res://src/main/assets/texture/used/item/ornament/Item__32.png" id="209_snlpn"]
+[ext_resource type="Texture2D" uid="uid://btccimdthsjid" path="res://src/main/assets/texture/used/item/ornament/Item__33.png" id="210_blg31"]
+[ext_resource type="Texture2D" uid="uid://yqfow3qvw33i" path="res://src/main/assets/texture/used/item/ornament/Item__34.png" id="211_7n0qg"]
+[ext_resource type="Texture2D" uid="uid://bttr4sqho418b" path="res://src/main/assets/texture/used/item/ornament/Item__35.png" id="212_eml3f"]
+[ext_resource type="Texture2D" uid="uid://b568hosu5gqt0" path="res://src/main/assets/texture/used/item/ornament/Item__40.png" id="213_ci1v0"]
+[ext_resource type="Texture2D" uid="uid://5jteca57j4lx" path="res://src/main/assets/texture/used/item/ornament/Item__41.png" id="214_10i3p"]
+[ext_resource type="Texture2D" uid="uid://du35e1nt3o2pt" path="res://src/main/assets/texture/used/item/ornament/Item__42.png" id="215_qp5rp"]
+[ext_resource type="Texture2D" uid="uid://hwjhgfu7opxw" path="res://src/main/assets/texture/used/item/ornament/Item__43.png" id="216_kehco"]
+[ext_resource type="Texture2D" uid="uid://85g0h2n80xmd" path="res://src/main/assets/texture/used/item/ornament/Item__71.png" id="217_rg370"]
+[ext_resource type="Texture2D" uid="uid://dx1xoog8s52ai" path="res://src/main/assets/texture/used/item/armor/Item_33.png" id="218_fs5k2"]
+[ext_resource type="Texture2D" uid="uid://dcmsyueqhmpj1" path="res://src/main/assets/texture/used/item/armor/Item_34.png" id="219_0hd4i"]
+[ext_resource type="Texture2D" uid="uid://c1qhpjcxv7s0l" path="res://src/main/assets/texture/used/item/armor/Item_35.png" id="220_il6c5"]
+[ext_resource type="Texture2D" uid="uid://du0noabwl232u" path="res://src/main/assets/texture/used/item/armor/Item_36.png" id="221_7jcy8"]
+[ext_resource type="Texture2D" uid="uid://bmqpjgjdmsbj0" path="res://src/main/assets/texture/used/item/armor/Item_37.png" id="222_0bcdx"]
+[ext_resource type="Texture2D" uid="uid://bvhmjcxd3tmlm" path="res://src/main/assets/texture/used/item/armor/Item_38.png" id="223_t1e7b"]
+[ext_resource type="Texture2D" uid="uid://dwjt4s5w3if5k" path="res://src/main/assets/texture/used/item/armor/Item_39.png" id="224_oqyms"]
+[ext_resource type="Texture2D" uid="uid://cf0aplgfvhup" path="res://src/main/assets/texture/used/item/armor/Item_42.png" id="225_orn1o"]
+[ext_resource type="Texture2D" uid="uid://mo3i6rpi3yvv" path="res://src/main/assets/texture/used/item/armor/Item_43.png" id="226_7wehc"]
+[ext_resource type="Texture2D" uid="uid://ooigbslqjhlj" path="res://src/main/assets/texture/used/item/armor/Item_44.png" id="227_d6x5r"]
+[ext_resource type="Texture2D" uid="uid://dbvbr3y13k7wj" path="res://src/main/assets/texture/used/item/armor/Item__24.png" id="228_xl8cw"]
+[ext_resource type="Texture2D" uid="uid://27b6yo8lwkx8" path="res://src/main/assets/texture/used/item/armor/Item__25.png" id="229_tpb0c"]
+[ext_resource type="Texture2D" uid="uid://bt1oergwj7wgc" path="res://src/main/assets/texture/used/item/armor/Item__26.png" id="230_6vd3b"]
+[ext_resource type="Texture2D" uid="uid://5ccmkvv42b55" path="res://src/main/assets/texture/used/item/armor/Item__27.png" id="231_qni8i"]
+[ext_resource type="Texture2D" uid="uid://cuphe5y5rjncn" path="res://src/main/assets/texture/used/item/armor/Item__44.png" id="232_ys8vo"]
+[ext_resource type="Texture2D" uid="uid://by65cvp5r8jy3" path="res://src/main/assets/texture/used/item/armor/Item__45.png" id="233_e1hxj"]
+[ext_resource type="Texture2D" uid="uid://djt2oobk2g544" path="res://src/main/assets/texture/used/item/armor/Item__46.png" id="234_ut345"]
+[ext_resource type="Texture2D" uid="uid://c58t4d65wntl3" path="res://src/main/assets/texture/used/item/armor/Item__47.png" id="235_wfkg5"]
+[ext_resource type="Texture2D" uid="uid://b7rjxgt8p5g5i" path="res://src/main/assets/texture/used/item/armor/Item__48.png" id="236_iyej7"]
+[ext_resource type="Texture2D" uid="uid://dqwmny8d80inx" path="res://src/main/assets/texture/used/item/armor/Item__49.png" id="237_vmvdx"]
+[ext_resource type="Texture2D" uid="uid://becll0mvg2r86" path="res://src/main/assets/texture/used/item/armor/Item__50.png" id="238_pu8wc"]
+[ext_resource type="Texture2D" uid="uid://dlwp53uxthyk" path="res://src/main/assets/texture/used/item/armor/Item__51.png" id="239_rnw2a"]
+[ext_resource type="Texture2D" uid="uid://b54ed4duqg3yd" path="res://src/main/assets/texture/used/item/armor/Item__52.png" id="240_7ffip"]
+[ext_resource type="Texture2D" uid="uid://1gbm14y6ehrx" path="res://src/main/assets/texture/used/item/armor/Item__53.png" id="241_q6dbp"]
+[ext_resource type="Texture2D" uid="uid://blo4hrwjte43p" path="res://src/main/assets/texture/used/item/armor/Item__54.png" id="242_pp2cx"]
+[ext_resource type="Texture2D" uid="uid://oephv1tt5eft" path="res://src/main/assets/texture/used/item/armor/Item__55.png" id="243_crcdg"]
+[ext_resource type="Texture2D" uid="uid://c664jxm8no6rp" path="res://src/main/assets/texture/used/item/armor/Item__56.png" id="244_v0a64"]
+[ext_resource type="Texture2D" uid="uid://d1pyvcbconeqc" path="res://src/main/assets/texture/used/item/armor/Item__57.png" id="245_4mvaq"]
+[ext_resource type="Texture2D" uid="uid://c4gwy8vwa116k" path="res://src/main/assets/texture/used/item/armor/Item__58.png" id="246_ibhcc"]
+[ext_resource type="Texture2D" uid="uid://c28qgll6xa827" path="res://src/main/assets/texture/used/item/armor/Item__59.png" id="247_gfaum"]
+[ext_resource type="Texture2D" uid="uid://binlwlugakiur" path="res://src/main/assets/texture/used/item/armor/Item__60.png" id="248_7n0li"]
+[ext_resource type="Texture2D" uid="uid://csdwgiplt2axl" path="res://src/main/assets/texture/used/item/armor/Item__61.png" id="249_yvoow"]
+[ext_resource type="Texture2D" uid="uid://bmfbq8qkhnlh6" path="res://src/main/assets/texture/used/item/armor/Item__62.png" id="250_1elua"]
+[ext_resource type="Texture2D" uid="uid://bcpxqj8qbimts" path="res://src/main/assets/texture/used/item/armor/Item__63.png" id="251_i5dne"]
+[ext_resource type="Texture2D" uid="uid://u4ul3aqksn7y" path="res://src/main/assets/texture/used/item/treasure/icon1000.png" id="252_wtgox"]
+[ext_resource type="Texture2D" uid="uid://bxs3efr8os5aa" path="res://src/main/assets/texture/used/item/treasure/icon1001.png" id="253_cnt5d"]
+[ext_resource type="Texture2D" uid="uid://bhb4lndr4s5sp" path="res://src/main/assets/texture/used/item/treasure/icon1002.png" id="254_8e8b3"]
+[ext_resource type="Texture2D" uid="uid://c2ii0r36hm3al" path="res://src/main/assets/texture/used/item/treasure/icon1003.png" id="255_70m6u"]
+[ext_resource type="Texture2D" uid="uid://bp3xbk30aafbw" path="res://src/main/assets/texture/used/item/treasure/icon1004.png" id="256_i2sp8"]
+[ext_resource type="Texture2D" uid="uid://ccxx2dirrftwt" path="res://src/main/assets/texture/used/item/treasure/icon1005.png" id="257_1rog4"]
+[ext_resource type="Texture2D" uid="uid://c4cns4khvwc61" path="res://src/main/assets/texture/used/item/treasure/icon1006.png" id="258_qm7nw"]
+[ext_resource type="Texture2D" uid="uid://cysbs85cl5c3l" path="res://src/main/assets/texture/used/item/treasure/icon1007.png" id="259_fpelh"]
+[ext_resource type="Texture2D" uid="uid://dyr8v3s4yy3wr" path="res://src/main/assets/texture/used/item/treasure/icon1008.png" id="260_1ywvb"]
+[ext_resource type="Texture2D" uid="uid://txa2evy5mh4" path="res://src/main/assets/texture/used/item/treasure/icon1009.png" id="261_fpad0"]
+[ext_resource type="Texture2D" uid="uid://buoix04ehvxne" path="res://src/main/assets/texture/used/item/treasure/icon1010.png" id="262_lcfm4"]
+[ext_resource type="Texture2D" uid="uid://bsaaqi34f7quq" path="res://src/main/assets/texture/used/item/treasure/icon1011.png" id="263_8ch6s"]
+[ext_resource type="Texture2D" uid="uid://chun73lde77r3" path="res://src/main/assets/texture/used/item/treasure/icon1012.png" id="264_oclqq"]
+[ext_resource type="Texture2D" uid="uid://cov7kofkb4ae3" path="res://src/main/assets/texture/used/item/treasure/icon1013.png" id="265_psyvg"]
+[ext_resource type="Texture2D" uid="uid://dylmb1kdp0wrb" path="res://src/main/assets/texture/used/item/treasure/icon1014.png" id="266_sfvjq"]
+[ext_resource type="Texture2D" uid="uid://csr1nyd8tt6vh" path="res://src/main/assets/texture/used/item/treasure/icon1015.png" id="267_ko5xg"]
+[ext_resource type="Texture2D" uid="uid://b0ckp7dp8fr84" path="res://src/main/assets/texture/used/item/treasure/icon1016.png" id="268_1spw1"]
+[ext_resource type="Texture2D" uid="uid://m80chq03gha7" path="res://src/main/assets/texture/used/item/treasure/icon1017.png" id="269_2qpyq"]
+[ext_resource type="Texture2D" uid="uid://cy7gadiexw3y2" path="res://src/main/assets/texture/used/item/treasure/icon1018.png" id="270_7kl2y"]
+[ext_resource type="Texture2D" uid="uid://y8p3p854lf43" path="res://src/main/assets/texture/used/item/treasure/icon1019.png" id="271_jehqm"]
+[ext_resource type="Texture2D" uid="uid://bt0cmroo07okp" path="res://src/main/assets/texture/used/item/treasure/icon976.png" id="272_3wfx7"]
+[ext_resource type="Texture2D" uid="uid://3k3ca2hcfgq5" path="res://src/main/assets/texture/used/item/treasure/icon977.png" id="273_c43hj"]
+[ext_resource type="Texture2D" uid="uid://dju1a2d87l6a3" path="res://src/main/assets/texture/used/item/treasure/icon978.png" id="274_8bbtd"]
+[ext_resource type="Texture2D" uid="uid://bd3mts04mxxda" path="res://src/main/assets/texture/used/item/treasure/icon979.png" id="275_eahod"]
+[ext_resource type="Texture2D" uid="uid://i1ut5ujgrp1" path="res://src/main/assets/texture/used/item/treasure/icon980.png" id="276_xfiun"]
+[ext_resource type="Texture2D" uid="uid://c2hpn8m1lxqm8" path="res://src/main/assets/texture/used/item/treasure/icon981.png" id="277_r3sux"]
+[ext_resource type="Texture2D" uid="uid://buubkwalqcvnt" path="res://src/main/assets/texture/used/item/treasure/icon982.png" id="278_6bijf"]
+[ext_resource type="Texture2D" uid="uid://n0npdc5wdcbk" path="res://src/main/assets/texture/used/item/treasure/icon983.png" id="279_vi2r5"]
+[ext_resource type="Texture2D" uid="uid://bakw6pw6yw07g" path="res://src/main/assets/texture/used/item/treasure/icon984.png" id="280_hu6rc"]
+[ext_resource type="Texture2D" uid="uid://3cc3jmeidg2l" path="res://src/main/assets/texture/used/item/treasure/icon985.png" id="281_kwh7b"]
+[ext_resource type="Texture2D" uid="uid://bmufpbis2niul" path="res://src/main/assets/texture/used/item/treasure/icon986.png" id="282_ycs6o"]
+[ext_resource type="Texture2D" uid="uid://d0hdmetqkcth8" path="res://src/main/assets/texture/used/item/treasure/icon987.png" id="283_glrk5"]
+[ext_resource type="Texture2D" uid="uid://cd5o0pdkyb6nr" path="res://src/main/assets/texture/used/item/treasure/icon988.png" id="284_jtbq0"]
+[ext_resource type="Texture2D" uid="uid://c0eemcxg4wpwg" path="res://src/main/assets/texture/used/item/treasure/icon989.png" id="285_de6lv"]
+[ext_resource type="Texture2D" uid="uid://dhd71ofqgrs2e" path="res://src/main/assets/texture/used/item/treasure/icon990.png" id="286_cibhj"]
+[ext_resource type="Texture2D" uid="uid://yhkpqkycee4d" path="res://src/main/assets/texture/used/item/treasure/icon991.png" id="287_l3dwn"]
+[ext_resource type="Texture2D" uid="uid://bwne28xljft7d" path="res://src/main/assets/texture/used/item/treasure/icon992.png" id="288_abkyd"]
+[ext_resource type="Texture2D" uid="uid://cwuryv03t28qg" path="res://src/main/assets/texture/used/item/treasure/icon993.png" id="289_ohkja"]
+[ext_resource type="Texture2D" uid="uid://674cvudn5flo" path="res://src/main/assets/texture/used/item/treasure/icon994.png" id="290_d2uc3"]
+[ext_resource type="Texture2D" uid="uid://hpp8qw7si4ui" path="res://src/main/assets/texture/used/item/treasure/icon995.png" id="291_dm2mr"]
+[ext_resource type="Texture2D" uid="uid://cm2ld37dami0m" path="res://src/main/assets/texture/used/item/treasure/icon996.png" id="292_ssxrh"]
+[ext_resource type="Texture2D" uid="uid://b6vjldk2rpc2f" path="res://src/main/assets/texture/used/item/treasure/icon997.png" id="293_gq3mm"]
+[ext_resource type="Texture2D" uid="uid://d3getnwwmjnod" path="res://src/main/assets/texture/used/item/treasure/icon998.png" id="294_rvljl"]
+[ext_resource type="Texture2D" uid="uid://dy3ei07hm0mqw" path="res://src/main/assets/texture/used/item/treasure/icon999.png" id="295_gesk5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psuf0"]
+atlas = ExtResource("13_ev6im")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t5fu"]
+atlas = ExtResource("14_po8iw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrdqo"]
+atlas = ExtResource("15_bvvey")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pse4b"]
+atlas = ExtResource("16_xme1s")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ox15r"]
+atlas = ExtResource("17_4s7ej")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swjfe"]
+atlas = ExtResource("8_j8mdk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hot5p"]
+atlas = ExtResource("9_udv3g")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1ry7"]
+atlas = ExtResource("10_qvxm8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2hvh"]
+atlas = ExtResource("11_hhfpv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11qs7"]
+atlas = ExtResource("12_j81t7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0tdr"]
+atlas = ExtResource("2_vc2a3")
+region = Rect2(0, 3, 14, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8435"]
+atlas = ExtResource("3_7dto5")
+region = Rect2(0, 0, 9, 9)
+margin = Rect2(5, 5, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icy3x"]
+atlas = ExtResource("4_qlfns")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seldy"]
+atlas = ExtResource("22_q315n")
+region = Rect2(1, 3, 12, 12)
+
+[node name="items_icon" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_o6pwm")
+metadata/_edit_lock_ = true
+
+[node name="potion" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="potion_normal_green" type="TextureRect" parent="potion"]
+offset_left = 6.0
+offset_top = 618.0
+offset_right = 22.0
+offset_bottom = 634.0
+texture = ExtResource("5_pcjoy")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion_normal_red" type="TextureRect" parent="potion"]
+offset_left = 28.0
+offset_top = 618.0
+offset_right = 44.0
+offset_bottom = 634.0
+texture = ExtResource("6_wugw7")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion_normal_yellow" type="TextureRect" parent="potion"]
+offset_left = 51.0
+offset_top = 618.0
+offset_right = 67.0
+offset_bottom = 634.0
+texture = ExtResource("7_ndrdj")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion_small_blue" type="TextureRect" parent="potion"]
+offset_top = 646.0
+offset_right = 16.0
+offset_bottom = 662.0
+texture = SubResource("AtlasTexture_psuf0")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion_small_green" type="TextureRect" parent="potion"]
+offset_left = 22.0
+offset_top = 646.0
+offset_right = 38.0
+offset_bottom = 662.0
+texture = SubResource("AtlasTexture_1t5fu")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion_small_purple" type="TextureRect" parent="potion"]
+offset_left = 43.0
+offset_top = 646.0
+offset_right = 59.0
+offset_bottom = 662.0
+texture = SubResource("AtlasTexture_vrdqo")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion_small_red" type="TextureRect" parent="potion"]
+offset_left = 68.0
+offset_top = 646.0
+offset_right = 84.0
+offset_bottom = 662.0
+texture = SubResource("AtlasTexture_pse4b")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion_small_orange" type="TextureRect" parent="potion"]
+offset_left = 90.0
+offset_top = 647.0
+offset_right = 106.0
+offset_bottom = 663.0
+texture = SubResource("AtlasTexture_ox15r")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion_large_blue" type="TextureRect" parent="potion"]
+offset_left = 45.0
+offset_top = 675.0
+offset_right = 61.0
+offset_bottom = 691.0
+texture = SubResource("AtlasTexture_swjfe")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion_large_green" type="TextureRect" parent="potion"]
+offset_left = 2.0
+offset_top = 676.0
+offset_right = 18.0
+offset_bottom = 692.0
+texture = SubResource("AtlasTexture_hot5p")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion_large_purple" type="TextureRect" parent="potion"]
+offset_left = 87.0
+offset_top = 674.0
+offset_right = 103.0
+offset_bottom = 690.0
+texture = SubResource("AtlasTexture_q1ry7")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion_large_red" type="TextureRect" parent="potion"]
+offset_left = 65.0
+offset_top = 674.0
+offset_right = 81.0
+offset_bottom = 690.0
+texture = SubResource("AtlasTexture_x2hvh")
+metadata/_edit_use_anchors_ = true
+
+[node name="potion_large_orange" type="TextureRect" parent="potion"]
+offset_left = 23.0
+offset_top = 675.0
+offset_right = 39.0
+offset_bottom = 691.0
+texture = SubResource("AtlasTexture_11qs7")
+metadata/_edit_use_anchors_ = true
+
+[node name="other" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="coin_pile" type="TextureRect" parent="other"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 142.0
+offset_top = 625.0
+offset_right = 158.0
+offset_bottom = 641.0
+texture = SubResource("AtlasTexture_g0tdr")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="coin" type="TextureRect" parent="other"]
+self_modulate = Color(1, 0.968627, 0.878431, 1)
+custom_minimum_size = Vector2(16, 16)
+offset_left = 163.0
+offset_top = 626.0
+offset_right = 179.0
+offset_bottom = 642.0
+texture = SubResource("AtlasTexture_p8435")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="diamond" type="TextureRect" parent="other"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 182.0
+offset_top = 626.0
+offset_right = 198.0
+offset_bottom = 642.0
+texture = SubResource("AtlasTexture_icy3x")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="shield_bomb" type="TextureRect" parent="other"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 149.0
+offset_top = 655.0
+offset_right = 165.0
+offset_bottom = 671.0
+texture = ExtResource("18_et8hv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shield_casque" type="TextureRect" parent="other"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 149.0
+offset_top = 672.0
+offset_right = 165.0
+offset_bottom = 688.0
+texture = ExtResource("19_m5sla")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shield_heart_green" type="TextureRect" parent="other"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 166.0
+offset_top = 672.0
+offset_right = 182.0
+offset_bottom = 688.0
+texture = ExtResource("20_mm5bj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shield_shoe" type="TextureRect" parent="other"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 166.0
+offset_top = 655.0
+offset_right = 182.0
+offset_bottom = 671.0
+texture = ExtResource("21_gcxdy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="weapon" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D19" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = -17.0
+offset_top = -2.0
+offset_right = -1.0
+offset_bottom = 14.0
+texture = ExtResource("20_teral")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D20" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 15.0
+offset_top = -2.0
+offset_right = 31.0
+offset_bottom = 14.0
+texture = ExtResource("21_8oiq6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D21" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = -20.0
+offset_top = 27.0
+offset_right = -4.0
+offset_bottom = 43.0
+texture = ExtResource("22_frjew")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D22" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 12.0
+offset_top = 27.0
+offset_right = 28.0
+offset_bottom = 43.0
+texture = ExtResource("23_7on2n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D23" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 44.0
+offset_top = 27.0
+offset_right = 60.0
+offset_bottom = 43.0
+texture = ExtResource("24_gysdj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D24" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 76.0
+offset_top = 27.0
+offset_right = 92.0
+offset_bottom = 43.0
+texture = ExtResource("25_t2p7e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D25" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 108.0
+offset_top = 27.0
+offset_right = 124.0
+offset_bottom = 43.0
+texture = ExtResource("26_3mryw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D26" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 140.0
+offset_top = 27.0
+offset_right = 156.0
+offset_bottom = 43.0
+texture = ExtResource("27_v4fp7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D27" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 172.0
+offset_top = 27.0
+offset_right = 188.0
+offset_bottom = 43.0
+texture = ExtResource("28_gi6g5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="lightning_sword" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 204.0
+offset_top = 27.0
+offset_right = 220.0
+offset_bottom = 43.0
+texture = ExtResource("29_0hqcd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D29" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 236.0
+offset_top = 27.0
+offset_right = 252.0
+offset_bottom = 43.0
+texture = ExtResource("30_em4o0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D30" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 268.0
+offset_top = 27.0
+offset_right = 284.0
+offset_bottom = 43.0
+texture = ExtResource("31_xwbsk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D31" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = -20.0
+offset_top = 59.0
+offset_right = -4.0
+offset_bottom = 75.0
+texture = ExtResource("32_57ok6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D32" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 12.0
+offset_top = 59.0
+offset_right = 28.0
+offset_bottom = 75.0
+texture = ExtResource("33_yqcbe")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D33" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 44.0
+offset_top = 59.0
+offset_right = 60.0
+offset_bottom = 75.0
+texture = ExtResource("34_0osmg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D34" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 76.0
+offset_top = 59.0
+offset_right = 92.0
+offset_bottom = 75.0
+texture = ExtResource("35_g0neg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D35" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 108.0
+offset_top = 59.0
+offset_right = 124.0
+offset_bottom = 75.0
+texture = ExtResource("36_8tugu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D36" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 140.0
+offset_top = 59.0
+offset_right = 156.0
+offset_bottom = 75.0
+texture = ExtResource("37_mf4bu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D37" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 172.0
+offset_top = 59.0
+offset_right = 188.0
+offset_bottom = 75.0
+texture = ExtResource("38_nu1g0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D38" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 204.0
+offset_top = 59.0
+offset_right = 220.0
+offset_bottom = 75.0
+texture = ExtResource("39_kof4k")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D39" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 236.0
+offset_top = 59.0
+offset_right = 252.0
+offset_bottom = 75.0
+texture = ExtResource("40_ft7ep")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="yaksha" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 268.0
+offset_top = 59.0
+offset_right = 284.0
+offset_bottom = 75.0
+texture = ExtResource("41_wxpw1")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="axe8" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = -20.0
+offset_top = 91.0
+offset_right = -4.0
+offset_bottom = 107.0
+texture = ExtResource("42_6crrs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="axe9" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 12.0
+offset_top = 91.0
+offset_right = 28.0
+offset_bottom = 107.0
+texture = ExtResource("43_d1uld")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="axe10" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 44.0
+offset_top = 91.0
+offset_right = 60.0
+offset_bottom = 107.0
+texture = ExtResource("44_u5npo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="axe11" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 76.0
+offset_top = 91.0
+offset_right = 92.0
+offset_bottom = 107.0
+texture = ExtResource("45_8oj4h")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="axe12" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 108.0
+offset_top = 91.0
+offset_right = 124.0
+offset_bottom = 107.0
+texture = ExtResource("46_67v7n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sickle2" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 140.0
+offset_top = 91.0
+offset_right = 156.0
+offset_bottom = 107.0
+texture = ExtResource("47_x12xm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sickle3" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 172.0
+offset_top = 91.0
+offset_right = 188.0
+offset_bottom = 107.0
+texture = ExtResource("48_7rjrd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sickle4" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 204.0
+offset_top = 91.0
+offset_right = 220.0
+offset_bottom = 107.0
+texture = ExtResource("49_q1f0v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sickle5" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 236.0
+offset_top = 91.0
+offset_right = 252.0
+offset_bottom = 107.0
+texture = ExtResource("50_6r0tx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sickle" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 268.0
+offset_top = 91.0
+offset_right = 284.0
+offset_bottom = 107.0
+texture = ExtResource("51_owj21")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D51" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = -20.0
+offset_top = 123.0
+offset_right = -4.0
+offset_bottom = 139.0
+texture = ExtResource("52_r2uky")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D52" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 12.0
+offset_top = 123.0
+offset_right = 28.0
+offset_bottom = 139.0
+texture = ExtResource("53_ggr6p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D53" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 44.0
+offset_top = 123.0
+offset_right = 60.0
+offset_bottom = 139.0
+texture = ExtResource("54_hhme2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D54" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 76.0
+offset_top = 123.0
+offset_right = 92.0
+offset_bottom = 139.0
+texture = ExtResource("55_8wlbu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D55" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 108.0
+offset_top = 123.0
+offset_right = 124.0
+offset_bottom = 139.0
+texture = ExtResource("56_mq3ma")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D56" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 140.0
+offset_top = 123.0
+offset_right = 156.0
+offset_bottom = 139.0
+texture = ExtResource("57_is4co")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D57" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 172.0
+offset_top = 123.0
+offset_right = 188.0
+offset_bottom = 139.0
+texture = ExtResource("58_7b1oc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D58" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 204.0
+offset_top = 123.0
+offset_right = 220.0
+offset_bottom = 139.0
+texture = ExtResource("59_t55jt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D59" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 236.0
+offset_top = 123.0
+offset_right = 252.0
+offset_bottom = 139.0
+texture = ExtResource("60_ko18r")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D60" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 268.0
+offset_top = 123.0
+offset_right = 284.0
+offset_bottom = 139.0
+texture = ExtResource("61_lsrog")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D61" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = -20.0
+offset_top = 155.0
+offset_right = -4.0
+offset_bottom = 171.0
+texture = ExtResource("62_m7i4h")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D62" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 12.0
+offset_top = 155.0
+offset_right = 28.0
+offset_bottom = 171.0
+texture = ExtResource("63_yfcne")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D63" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 44.0
+offset_top = 155.0
+offset_right = 60.0
+offset_bottom = 171.0
+texture = ExtResource("64_scph1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D64" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 76.0
+offset_top = 155.0
+offset_right = 92.0
+offset_bottom = 171.0
+texture = ExtResource("65_behpo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D65" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 108.0
+offset_top = 155.0
+offset_right = 124.0
+offset_bottom = 171.0
+texture = ExtResource("66_fjvq7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D66" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 140.0
+offset_top = 155.0
+offset_right = 156.0
+offset_bottom = 171.0
+texture = ExtResource("67_kfsew")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D67" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 172.0
+offset_top = 155.0
+offset_right = 188.0
+offset_bottom = 171.0
+texture = ExtResource("68_728ne")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D68" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 204.0
+offset_top = 155.0
+offset_right = 220.0
+offset_bottom = 171.0
+texture = ExtResource("69_mqr3l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D69" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 236.0
+offset_top = 155.0
+offset_right = 252.0
+offset_bottom = 171.0
+texture = ExtResource("70_xpedq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D70" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 268.0
+offset_top = 155.0
+offset_right = 284.0
+offset_bottom = 171.0
+texture = ExtResource("71_n6n7k")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D71" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = -20.0
+offset_top = 187.0
+offset_right = -4.0
+offset_bottom = 203.0
+texture = ExtResource("72_0rau5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D72" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 12.0
+offset_top = 187.0
+offset_right = 28.0
+offset_bottom = 203.0
+texture = ExtResource("73_rthya")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D73" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 44.0
+offset_top = 187.0
+offset_right = 60.0
+offset_bottom = 203.0
+texture = ExtResource("74_p8mom")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D74" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 76.0
+offset_top = 187.0
+offset_right = 92.0
+offset_bottom = 203.0
+texture = ExtResource("75_i5o21")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D75" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 108.0
+offset_top = 187.0
+offset_right = 124.0
+offset_bottom = 203.0
+texture = ExtResource("76_jf6y5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D76" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 140.0
+offset_top = 187.0
+offset_right = 156.0
+offset_bottom = 203.0
+texture = ExtResource("77_jxg45")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D77" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 172.0
+offset_top = 187.0
+offset_right = 188.0
+offset_bottom = 203.0
+texture = ExtResource("78_n5njc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D78" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 204.0
+offset_top = 187.0
+offset_right = 220.0
+offset_bottom = 203.0
+texture = ExtResource("79_oskwx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D79" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 236.0
+offset_top = 187.0
+offset_right = 252.0
+offset_bottom = 203.0
+texture = ExtResource("80_u7kvj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D80" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 268.0
+offset_top = 187.0
+offset_right = 284.0
+offset_bottom = 203.0
+texture = ExtResource("81_6uctr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D81" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = -20.0
+offset_top = 219.0
+offset_right = -4.0
+offset_bottom = 235.0
+texture = ExtResource("82_s462i")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D82" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 12.0
+offset_top = 219.0
+offset_right = 28.0
+offset_bottom = 235.0
+texture = ExtResource("83_glhac")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D83" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 44.0
+offset_top = 219.0
+offset_right = 60.0
+offset_bottom = 235.0
+texture = ExtResource("84_lllqa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D84" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 76.0
+offset_top = 219.0
+offset_right = 92.0
+offset_bottom = 235.0
+texture = ExtResource("85_kydiy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D85" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 108.0
+offset_top = 219.0
+offset_right = 124.0
+offset_bottom = 235.0
+texture = ExtResource("86_qhvhp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D86" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 140.0
+offset_top = 219.0
+offset_right = 156.0
+offset_bottom = 235.0
+texture = ExtResource("87_lcgux")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D87" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 172.0
+offset_top = 219.0
+offset_right = 188.0
+offset_bottom = 235.0
+texture = ExtResource("88_l7o1q")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D88" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 204.0
+offset_top = 219.0
+offset_right = 220.0
+offset_bottom = 235.0
+texture = ExtResource("89_ixnry")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D89" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 236.0
+offset_top = 219.0
+offset_right = 252.0
+offset_bottom = 235.0
+texture = ExtResource("90_1xek6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D90" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 268.0
+offset_top = 219.0
+offset_right = 284.0
+offset_bottom = 235.0
+texture = ExtResource("91_qtd5e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D91" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = -20.0
+offset_top = 251.0
+offset_right = -4.0
+offset_bottom = 267.0
+texture = ExtResource("92_78kk3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D92" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 12.0
+offset_top = 251.0
+offset_right = 28.0
+offset_bottom = 267.0
+texture = ExtResource("93_bid03")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D93" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 44.0
+offset_top = 251.0
+offset_right = 60.0
+offset_bottom = 267.0
+texture = ExtResource("94_0nt50")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D94" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 76.0
+offset_top = 251.0
+offset_right = 92.0
+offset_bottom = 267.0
+texture = ExtResource("95_8hnxv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D95" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 108.0
+offset_top = 251.0
+offset_right = 124.0
+offset_bottom = 267.0
+texture = ExtResource("96_l1x5t")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D96" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 140.0
+offset_top = 251.0
+offset_right = 156.0
+offset_bottom = 267.0
+texture = ExtResource("97_ip1d6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D97" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 172.0
+offset_top = 251.0
+offset_right = 188.0
+offset_bottom = 267.0
+texture = ExtResource("98_c0uix")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D98" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 204.0
+offset_top = 251.0
+offset_right = 220.0
+offset_bottom = 267.0
+texture = ExtResource("99_18601")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D99" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 236.0
+offset_top = 251.0
+offset_right = 252.0
+offset_bottom = 267.0
+texture = ExtResource("100_0klyu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D100" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 268.0
+offset_top = 251.0
+offset_right = 284.0
+offset_bottom = 267.0
+texture = ExtResource("101_nxl4b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D101" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = -20.0
+offset_top = 283.0
+offset_right = -4.0
+offset_bottom = 299.0
+texture = ExtResource("102_ann8m")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D102" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 12.0
+offset_top = 283.0
+offset_right = 28.0
+offset_bottom = 299.0
+texture = ExtResource("103_8bouv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D103" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 44.0
+offset_top = 283.0
+offset_right = 60.0
+offset_bottom = 299.0
+texture = ExtResource("104_uae26")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D104" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 76.0
+offset_top = 283.0
+offset_right = 92.0
+offset_bottom = 299.0
+texture = ExtResource("105_xwsf3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D105" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 108.0
+offset_top = 283.0
+offset_right = 124.0
+offset_bottom = 299.0
+texture = ExtResource("106_60m8f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D106" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 140.0
+offset_top = 283.0
+offset_right = 156.0
+offset_bottom = 299.0
+texture = ExtResource("107_7duhy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D107" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 172.0
+offset_top = 283.0
+offset_right = 188.0
+offset_bottom = 299.0
+texture = ExtResource("108_bitv2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D108" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 204.0
+offset_top = 283.0
+offset_right = 220.0
+offset_bottom = 299.0
+texture = ExtResource("109_bg3bs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D109" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 236.0
+offset_top = 283.0
+offset_right = 252.0
+offset_bottom = 299.0
+texture = ExtResource("110_rcn2b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D110" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 268.0
+offset_top = 283.0
+offset_right = 284.0
+offset_bottom = 299.0
+texture = ExtResource("111_3nct1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D111" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = -20.0
+offset_top = 315.0
+offset_right = -4.0
+offset_bottom = 331.0
+texture = ExtResource("112_6n7yk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D112" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 12.0
+offset_top = 315.0
+offset_right = 28.0
+offset_bottom = 331.0
+texture = ExtResource("113_0cvgm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D113" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 44.0
+offset_top = 315.0
+offset_right = 60.0
+offset_bottom = 331.0
+texture = ExtResource("114_l8145")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Sprite2D114" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 76.0
+offset_top = 315.0
+offset_right = 92.0
+offset_bottom = 331.0
+texture = ExtResource("115_vemcu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="knife_shabby" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 319.0
+offset_top = 17.0
+offset_right = 335.0
+offset_bottom = 33.0
+texture = SubResource("AtlasTexture_seldy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword9" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 320.0
+offset_top = 51.0
+offset_right = 336.0
+offset_bottom = 67.0
+texture = ExtResource("144_1487u")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword10" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 352.0
+offset_top = 51.0
+offset_right = 368.0
+offset_bottom = 67.0
+texture = ExtResource("145_jy0od")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword11" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 384.0
+offset_top = 51.0
+offset_right = 400.0
+offset_bottom = 67.0
+texture = ExtResource("146_l5ww5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword12" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 416.0
+offset_top = 51.0
+offset_right = 432.0
+offset_bottom = 67.0
+texture = ExtResource("147_05q3a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="spear" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 448.0
+offset_top = 51.0
+offset_right = 464.0
+offset_bottom = 67.0
+texture = ExtResource("148_k22iv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="spear2" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 480.0
+offset_top = 51.0
+offset_right = 496.0
+offset_bottom = 67.0
+texture = ExtResource("149_e4wye")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="spear3" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 512.0
+offset_top = 51.0
+offset_right = 528.0
+offset_bottom = 67.0
+texture = ExtResource("150_b11bs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="spear4" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 544.0
+offset_top = 51.0
+offset_right = 560.0
+offset_bottom = 67.0
+texture = ExtResource("151_05vfk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword13" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 576.0
+offset_top = 51.0
+offset_right = 592.0
+offset_bottom = 67.0
+texture = ExtResource("152_i2gcm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword14" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 608.0
+offset_top = 51.0
+offset_right = 624.0
+offset_bottom = 67.0
+texture = ExtResource("153_x3mq7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword16" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 320.0
+offset_top = 83.0
+offset_right = 336.0
+offset_bottom = 99.0
+texture = ExtResource("154_sswts")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword17" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 352.0
+offset_top = 83.0
+offset_right = 368.0
+offset_bottom = 99.0
+texture = ExtResource("155_kupfj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="axe" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 384.0
+offset_top = 83.0
+offset_right = 400.0
+offset_bottom = 99.0
+texture = ExtResource("156_sn4tr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="machete" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 416.0
+offset_top = 83.0
+offset_right = 432.0
+offset_bottom = 99.0
+texture = ExtResource("157_efqvb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="axe2" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 448.0
+offset_top = 83.0
+offset_right = 464.0
+offset_bottom = 99.0
+texture = ExtResource("158_nsxsy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="axe3" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 480.0
+offset_top = 83.0
+offset_right = 496.0
+offset_bottom = 99.0
+texture = ExtResource("159_2s510")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="stick_big" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 512.0
+offset_top = 83.0
+offset_right = 528.0
+offset_bottom = 99.0
+texture = ExtResource("160_neqi2")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="wolf_tooth_stick_wood" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 544.0
+offset_top = 83.0
+offset_right = 560.0
+offset_bottom = 99.0
+texture = ExtResource("161_dj5mq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="hammer_wood" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 576.0
+offset_top = 83.0
+offset_right = 592.0
+offset_bottom = 99.0
+texture = ExtResource("162_fbebk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="hammer_wood2" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 608.0
+offset_top = 83.0
+offset_right = 624.0
+offset_bottom = 99.0
+texture = ExtResource("163_tjamh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="hammer_silver" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 384.0
+offset_top = 115.0
+offset_right = 400.0
+offset_bottom = 131.0
+texture = ExtResource("166_4lojj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="hammer_silver2" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 416.0
+offset_top = 115.0
+offset_right = 432.0
+offset_bottom = 131.0
+texture = ExtResource("167_0wvs0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="wolf_tooth_stick_silver" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 448.0
+offset_top = 115.0
+offset_right = 464.0
+offset_bottom = 131.0
+texture = ExtResource("168_me0gp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="hammer_silver3" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 480.0
+offset_top = 115.0
+offset_right = 496.0
+offset_bottom = 131.0
+texture = ExtResource("169_1m4as")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 320.0
+offset_top = 115.0
+offset_right = 336.0
+offset_bottom = 131.0
+texture = ExtResource("164_s5w2w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow2" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 352.0
+offset_top = 115.0
+offset_right = 368.0
+offset_bottom = 131.0
+texture = ExtResource("165_n17r8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="wand" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 512.0
+offset_top = 115.0
+offset_right = 528.0
+offset_bottom = 131.0
+texture = ExtResource("170_eei70")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="wand2" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 544.0
+offset_top = 115.0
+offset_right = 560.0
+offset_bottom = 131.0
+texture = ExtResource("171_7bksp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="wand3" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 576.0
+offset_top = 115.0
+offset_right = 592.0
+offset_bottom = 131.0
+texture = ExtResource("172_p7gdi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="wand4" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 608.0
+offset_top = 115.0
+offset_right = 624.0
+offset_bottom = 131.0
+texture = ExtResource("173_kpoeo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 320.0
+offset_top = 147.0
+offset_right = 336.0
+offset_bottom = 163.0
+texture = ExtResource("174_a2ia1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword2" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 352.0
+offset_top = 147.0
+offset_right = 368.0
+offset_bottom = 163.0
+texture = ExtResource("175_rvsl5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword3" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 384.0
+offset_top = 147.0
+offset_right = 400.0
+offset_bottom = 163.0
+texture = ExtResource("176_lupwq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword4" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 416.0
+offset_top = 147.0
+offset_right = 432.0
+offset_bottom = 163.0
+texture = ExtResource("177_tsa0p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword5" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 448.0
+offset_top = 147.0
+offset_right = 464.0
+offset_bottom = 163.0
+texture = ExtResource("178_3gur2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword6" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 480.0
+offset_top = 147.0
+offset_right = 496.0
+offset_bottom = 163.0
+texture = ExtResource("179_uw4xk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword7" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 512.0
+offset_top = 147.0
+offset_right = 528.0
+offset_bottom = 163.0
+texture = ExtResource("180_2hwrl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword8" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 544.0
+offset_top = 147.0
+offset_right = 560.0
+offset_bottom = 163.0
+texture = ExtResource("181_ysgmk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="spear5" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 576.0
+offset_top = 147.0
+offset_right = 592.0
+offset_bottom = 163.0
+texture = ExtResource("182_ukg7a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="spear6" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 608.0
+offset_top = 147.0
+offset_right = 624.0
+offset_bottom = 163.0
+texture = ExtResource("183_huxy1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="spear7" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 320.0
+offset_top = 179.0
+offset_right = 336.0
+offset_bottom = 195.0
+texture = ExtResource("184_215ym")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="sword15" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 352.0
+offset_top = 179.0
+offset_right = 368.0
+offset_bottom = 195.0
+texture = ExtResource("185_307cn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="axe4" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 384.0
+offset_top = 179.0
+offset_right = 400.0
+offset_bottom = 195.0
+texture = ExtResource("186_y0esm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="axe5" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 416.0
+offset_top = 179.0
+offset_right = 432.0
+offset_bottom = 195.0
+texture = ExtResource("187_cpdvc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="axe6" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 448.0
+offset_top = 179.0
+offset_right = 464.0
+offset_bottom = 195.0
+texture = ExtResource("188_qc861")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="axe7" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 480.0
+offset_top = 179.0
+offset_right = 496.0
+offset_bottom = 195.0
+texture = ExtResource("189_v17bf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow3" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 512.0
+offset_top = 179.0
+offset_right = 528.0
+offset_bottom = 195.0
+texture = ExtResource("190_pt1ms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow4" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 544.0
+offset_top = 179.0
+offset_right = 560.0
+offset_bottom = 195.0
+texture = ExtResource("191_byin1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow5" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 576.0
+offset_top = 179.0
+offset_right = 592.0
+offset_bottom = 195.0
+texture = ExtResource("192_dq2jd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow6" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 608.0
+offset_top = 179.0
+offset_right = 624.0
+offset_bottom = 195.0
+texture = ExtResource("193_vjwfh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="wand5" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 320.0
+offset_top = 211.0
+offset_right = 336.0
+offset_bottom = 227.0
+texture = ExtResource("194_4awi5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="wand6" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 352.0
+offset_top = 211.0
+offset_right = 368.0
+offset_bottom = 227.0
+texture = ExtResource("195_fn2pw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="wand7" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 384.0
+offset_top = 211.0
+offset_right = 400.0
+offset_bottom = 227.0
+texture = ExtResource("196_il8s7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="wand8" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 416.0
+offset_top = 211.0
+offset_right = 432.0
+offset_bottom = 227.0
+texture = ExtResource("197_62b2a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow7" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 447.0
+offset_top = 211.0
+offset_right = 463.0
+offset_bottom = 227.0
+texture = ExtResource("116_xwbhh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow8" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 479.0
+offset_top = 211.0
+offset_right = 495.0
+offset_bottom = 227.0
+texture = ExtResource("117_81p4s")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow9" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 511.0
+offset_top = 211.0
+offset_right = 527.0
+offset_bottom = 227.0
+texture = ExtResource("118_4ax4o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow10" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 543.0
+offset_top = 211.0
+offset_right = 559.0
+offset_bottom = 227.0
+texture = ExtResource("119_vh8y4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow11" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 575.0
+offset_top = 211.0
+offset_right = 591.0
+offset_bottom = 227.0
+texture = ExtResource("120_voikt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow12" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 607.0
+offset_top = 211.0
+offset_right = 623.0
+offset_bottom = 227.0
+texture = ExtResource("121_71fur")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow13" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 319.0
+offset_top = 243.0
+offset_right = 335.0
+offset_bottom = 259.0
+texture = ExtResource("122_w5qnk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow14" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 351.0
+offset_top = 243.0
+offset_right = 367.0
+offset_bottom = 259.0
+texture = ExtResource("123_nmf8i")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow15" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 383.0
+offset_top = 243.0
+offset_right = 399.0
+offset_bottom = 259.0
+texture = ExtResource("124_wnt3n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow16" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 415.0
+offset_top = 243.0
+offset_right = 431.0
+offset_bottom = 259.0
+texture = ExtResource("125_2vyrn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="arrow" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 447.0
+offset_top = 243.0
+offset_right = 463.0
+offset_bottom = 259.0
+texture = ExtResource("126_a5uti")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="arrow2" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 479.0
+offset_top = 243.0
+offset_right = 495.0
+offset_bottom = 259.0
+texture = ExtResource("127_dqies")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="arrow3" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 511.0
+offset_top = 243.0
+offset_right = 527.0
+offset_bottom = 259.0
+texture = ExtResource("128_oivw7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="arrow4" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 543.0
+offset_top = 243.0
+offset_right = 559.0
+offset_bottom = 259.0
+texture = ExtResource("129_y60v7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="arrow5" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 575.0
+offset_top = 243.0
+offset_right = 591.0
+offset_bottom = 259.0
+texture = ExtResource("130_mfd0r")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="arrow6" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 607.0
+offset_top = 243.0
+offset_right = 623.0
+offset_bottom = 259.0
+texture = ExtResource("131_jnpbe")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="catapult" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 319.0
+offset_top = 275.0
+offset_right = 335.0
+offset_bottom = 291.0
+texture = ExtResource("132_wrvfg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="catapult2" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 351.0
+offset_top = 275.0
+offset_right = 367.0
+offset_bottom = 291.0
+texture = ExtResource("133_2ty0c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="catapult3" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 383.0
+offset_top = 275.0
+offset_right = 399.0
+offset_bottom = 291.0
+texture = ExtResource("134_dcplq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="boomerang4" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 415.0
+offset_top = 275.0
+offset_right = 431.0
+offset_bottom = 291.0
+texture = ExtResource("135_1t0y1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="boomerang3" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 447.0
+offset_top = 275.0
+offset_right = 463.0
+offset_bottom = 291.0
+texture = ExtResource("136_vr6jv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="boomerang2" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 479.0
+offset_top = 275.0
+offset_right = 495.0
+offset_bottom = 291.0
+texture = ExtResource("137_8gfnk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="boomerang" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 511.0
+offset_top = 275.0
+offset_right = 527.0
+offset_bottom = 291.0
+texture = ExtResource("138_2wbbx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow17" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 543.0
+offset_top = 275.0
+offset_right = 559.0
+offset_bottom = 291.0
+texture = ExtResource("195_7kh6t")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bow18" type="TextureRect" parent="weapon"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 575.0
+offset_top = 275.0
+offset_right = 591.0
+offset_bottom = 291.0
+texture = ExtResource("196_gfg2w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ornament" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="magic_bowl" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 328.0
+offset_top = 566.0
+offset_right = 344.0
+offset_bottom = 582.0
+texture = ExtResource("198_0uwrx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="pileum" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 361.0
+offset_top = 566.0
+offset_right = 377.0
+offset_bottom = 582.0
+texture = ExtResource("200_ip5uw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="necklace" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 456.0
+offset_top = 602.0
+offset_right = 472.0
+offset_bottom = 618.0
+texture = ExtResource("201_r67kp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="necklace2" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 488.0
+offset_top = 602.0
+offset_right = 504.0
+offset_bottom = 618.0
+texture = ExtResource("202_gu40f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ring" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 329.0
+offset_top = 633.0
+offset_right = 345.0
+offset_bottom = 649.0
+texture = ExtResource("203_w5lxj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ring2" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 361.0
+offset_top = 633.0
+offset_right = 377.0
+offset_bottom = 649.0
+texture = ExtResource("204_a7swo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ring3" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 395.0
+offset_top = 633.0
+offset_right = 411.0
+offset_bottom = 649.0
+texture = ExtResource("213_ci1v0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ring4" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 427.0
+offset_top = 633.0
+offset_right = 443.0
+offset_bottom = 649.0
+texture = ExtResource("214_10i3p")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ring5" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 459.0
+offset_top = 633.0
+offset_right = 475.0
+offset_bottom = 649.0
+texture = ExtResource("215_qp5rp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ring6" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 491.0
+offset_top = 633.0
+offset_right = 507.0
+offset_bottom = 649.0
+texture = ExtResource("216_kehco")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="leaf" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 424.0
+offset_top = 565.0
+offset_right = 440.0
+offset_bottom = 581.0
+texture = ExtResource("205_1lx8o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="drum" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 456.0
+offset_top = 565.0
+offset_right = 472.0
+offset_bottom = 581.0
+texture = ExtResource("206_dlabf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="leaf2" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 488.0
+offset_top = 565.0
+offset_right = 504.0
+offset_bottom = 581.0
+texture = ExtResource("207_g11v2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="leaf3" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 395.0
+offset_top = 564.0
+offset_right = 411.0
+offset_bottom = 580.0
+texture = ExtResource("208_ia3rr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="necklace3" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 330.0
+offset_top = 602.0
+offset_right = 346.0
+offset_bottom = 618.0
+texture = ExtResource("209_snlpn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="necklace4" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 360.0
+offset_top = 602.0
+offset_right = 376.0
+offset_bottom = 618.0
+texture = ExtResource("210_blg31")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="necklace5" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 392.0
+offset_top = 602.0
+offset_right = 408.0
+offset_bottom = 618.0
+texture = ExtResource("211_7n0qg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="necklace6" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 424.0
+offset_top = 602.0
+offset_right = 440.0
+offset_bottom = 618.0
+texture = ExtResource("212_eml3f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="grail" type="TextureRect" parent="ornament"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 520.0
+offset_top = 566.0
+offset_right = 536.0
+offset_bottom = 582.0
+texture = ExtResource("217_rg370")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="armor" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="shield" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 138.0
+offset_top = 387.0
+offset_right = 154.0
+offset_bottom = 403.0
+texture = ExtResource("218_fs5k2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shield2" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 168.0
+offset_top = 387.0
+offset_right = 184.0
+offset_bottom = 403.0
+texture = ExtResource("219_0hd4i")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shield3" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 197.0
+offset_top = 387.0
+offset_right = 213.0
+offset_bottom = 403.0
+texture = ExtResource("220_il6c5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="casque2" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 135.0
+offset_top = 521.0
+offset_right = 151.0
+offset_bottom = 537.0
+texture = ExtResource("221_7jcy8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="casque3" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 167.0
+offset_top = 521.0
+offset_right = 183.0
+offset_bottom = 537.0
+texture = ExtResource("222_0bcdx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="casque4" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 199.0
+offset_top = 521.0
+offset_right = 215.0
+offset_bottom = 537.0
+texture = ExtResource("223_t1e7b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="casque5" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 231.0
+offset_top = 521.0
+offset_right = 247.0
+offset_bottom = 537.0
+texture = ExtResource("224_oqyms")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="armour" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 7.0
+offset_top = 418.0
+offset_right = 23.0
+offset_bottom = 434.0
+texture = ExtResource("225_orn1o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="robe" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 39.0
+offset_top = 418.0
+offset_right = 55.0
+offset_bottom = 434.0
+texture = ExtResource("226_7wehc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="cap5" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 103.0
+offset_top = 552.0
+offset_right = 119.0
+offset_bottom = 568.0
+texture = ExtResource("227_d6x5r")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shield4" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 8.0
+offset_top = 386.0
+offset_right = 24.0
+offset_bottom = 402.0
+texture = ExtResource("228_xl8cw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shield5" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 40.0
+offset_top = 386.0
+offset_right = 56.0
+offset_bottom = 402.0
+texture = ExtResource("229_tpb0c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shield6" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 72.0
+offset_top = 386.0
+offset_right = 88.0
+offset_bottom = 402.0
+texture = ExtResource("230_6vd3b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shield7" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 104.0
+offset_top = 386.0
+offset_right = 120.0
+offset_bottom = 402.0
+texture = ExtResource("231_qni8i")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="casque6" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 6.0
+offset_top = 518.0
+offset_right = 22.0
+offset_bottom = 534.0
+texture = ExtResource("232_ys8vo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="casque7" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 38.0
+offset_top = 518.0
+offset_right = 54.0
+offset_bottom = 534.0
+texture = ExtResource("233_e1hxj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="casque8" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 70.0
+offset_top = 518.0
+offset_right = 86.0
+offset_bottom = 534.0
+texture = ExtResource("234_ut345")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="casque9" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 102.0
+offset_top = 518.0
+offset_right = 118.0
+offset_bottom = 534.0
+texture = ExtResource("235_wfkg5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shoes" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 6.0
+offset_top = 485.0
+offset_right = 22.0
+offset_bottom = 501.0
+texture = ExtResource("236_iyej7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shoes2" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 38.0
+offset_top = 485.0
+offset_right = 54.0
+offset_bottom = 501.0
+texture = ExtResource("237_vmvdx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shoes3" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 70.0
+offset_top = 484.0
+offset_right = 86.0
+offset_bottom = 500.0
+texture = ExtResource("238_pu8wc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shoes4" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 102.0
+offset_top = 484.0
+offset_right = 118.0
+offset_bottom = 500.0
+texture = ExtResource("239_rnw2a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="cap" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 6.0
+offset_top = 552.0
+offset_right = 22.0
+offset_bottom = 568.0
+texture = ExtResource("240_7ffip")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="cap2" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 38.0
+offset_top = 552.0
+offset_right = 54.0
+offset_bottom = 568.0
+texture = ExtResource("241_q6dbp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="cap4" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 70.0
+offset_top = 552.0
+offset_right = 86.0
+offset_bottom = 568.0
+texture = ExtResource("242_pp2cx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="cap3" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 135.0
+offset_top = 552.0
+offset_right = 151.0
+offset_bottom = 568.0
+texture = ExtResource("243_crcdg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="armour2" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 71.0
+offset_top = 420.0
+offset_right = 87.0
+offset_bottom = 436.0
+texture = ExtResource("244_v0a64")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="armour3" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 103.0
+offset_top = 420.0
+offset_right = 119.0
+offset_bottom = 436.0
+texture = ExtResource("245_4mvaq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="armour4" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 135.0
+offset_top = 420.0
+offset_right = 151.0
+offset_bottom = 436.0
+texture = ExtResource("246_ibhcc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="armour5" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 167.0
+offset_top = 420.0
+offset_right = 183.0
+offset_bottom = 436.0
+texture = ExtResource("247_gfaum")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="mittens" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 6.0
+offset_top = 452.0
+offset_right = 22.0
+offset_bottom = 468.0
+texture = ExtResource("248_7n0li")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="mittens2" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 38.0
+offset_top = 452.0
+offset_right = 54.0
+offset_bottom = 468.0
+texture = ExtResource("249_yvoow")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="mittens3" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 70.0
+offset_top = 452.0
+offset_right = 86.0
+offset_bottom = 468.0
+texture = ExtResource("250_1elua")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="mittens4" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 102.0
+offset_top = 452.0
+offset_right = 118.0
+offset_bottom = 468.0
+texture = ExtResource("251_i5dne")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="casque" type="TextureRect" parent="armor"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 263.0
+offset_top = 520.0
+offset_right = 279.0
+offset_bottom = 536.0
+texture = ExtResource("199_mh8o4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="meterial" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="TextureRect4" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 425.0
+offset_top = 367.0
+offset_right = 441.0
+offset_bottom = 383.0
+texture = ExtResource("252_wtgox")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 457.0
+offset_top = 367.0
+offset_right = 473.0
+offset_bottom = 383.0
+texture = ExtResource("253_cnt5d")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 489.0
+offset_top = 367.0
+offset_right = 505.0
+offset_bottom = 383.0
+texture = ExtResource("254_8e8b3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect7" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 521.0
+offset_top = 367.0
+offset_right = 537.0
+offset_bottom = 383.0
+texture = ExtResource("255_70m6u")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect8" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 553.0
+offset_top = 367.0
+offset_right = 569.0
+offset_bottom = 383.0
+texture = ExtResource("256_i2sp8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect9" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 585.0
+offset_top = 367.0
+offset_right = 601.0
+offset_bottom = 383.0
+texture = ExtResource("257_1rog4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect10" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 617.0
+offset_top = 367.0
+offset_right = 633.0
+offset_bottom = 383.0
+texture = ExtResource("258_qm7nw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect11" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 329.0
+offset_top = 399.0
+offset_right = 345.0
+offset_bottom = 415.0
+texture = ExtResource("259_fpelh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect12" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 361.0
+offset_top = 399.0
+offset_right = 377.0
+offset_bottom = 415.0
+texture = ExtResource("260_1ywvb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect13" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 393.0
+offset_top = 399.0
+offset_right = 409.0
+offset_bottom = 415.0
+texture = ExtResource("261_fpad0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect14" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 425.0
+offset_top = 399.0
+offset_right = 441.0
+offset_bottom = 415.0
+texture = ExtResource("262_lcfm4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect15" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 457.0
+offset_top = 399.0
+offset_right = 473.0
+offset_bottom = 415.0
+texture = ExtResource("263_8ch6s")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect16" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 489.0
+offset_top = 399.0
+offset_right = 505.0
+offset_bottom = 415.0
+texture = ExtResource("264_oclqq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect17" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 521.0
+offset_top = 399.0
+offset_right = 537.0
+offset_bottom = 415.0
+texture = ExtResource("265_psyvg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect18" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 553.0
+offset_top = 399.0
+offset_right = 569.0
+offset_bottom = 415.0
+texture = ExtResource("266_sfvjq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect19" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 585.0
+offset_top = 399.0
+offset_right = 601.0
+offset_bottom = 415.0
+texture = ExtResource("267_ko5xg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect20" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 617.0
+offset_top = 399.0
+offset_right = 633.0
+offset_bottom = 415.0
+texture = ExtResource("268_1spw1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect21" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 329.0
+offset_top = 431.0
+offset_right = 345.0
+offset_bottom = 447.0
+texture = ExtResource("269_2qpyq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect22" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 361.0
+offset_top = 431.0
+offset_right = 377.0
+offset_bottom = 447.0
+texture = ExtResource("270_7kl2y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect23" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 393.0
+offset_top = 431.0
+offset_right = 409.0
+offset_bottom = 447.0
+texture = ExtResource("271_jehqm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect24" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 425.0
+offset_top = 431.0
+offset_right = 441.0
+offset_bottom = 447.0
+texture = ExtResource("272_3wfx7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect25" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 457.0
+offset_top = 431.0
+offset_right = 473.0
+offset_bottom = 447.0
+texture = ExtResource("273_c43hj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect26" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 489.0
+offset_top = 431.0
+offset_right = 505.0
+offset_bottom = 447.0
+texture = ExtResource("274_8bbtd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect27" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 521.0
+offset_top = 431.0
+offset_right = 537.0
+offset_bottom = 447.0
+texture = ExtResource("275_eahod")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect28" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 553.0
+offset_top = 431.0
+offset_right = 569.0
+offset_bottom = 447.0
+texture = ExtResource("276_xfiun")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect29" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 585.0
+offset_top = 431.0
+offset_right = 601.0
+offset_bottom = 447.0
+texture = ExtResource("277_r3sux")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect30" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 617.0
+offset_top = 431.0
+offset_right = 633.0
+offset_bottom = 447.0
+texture = ExtResource("278_6bijf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect31" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 329.0
+offset_top = 463.0
+offset_right = 345.0
+offset_bottom = 479.0
+texture = ExtResource("279_vi2r5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect32" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 361.0
+offset_top = 463.0
+offset_right = 377.0
+offset_bottom = 479.0
+texture = ExtResource("280_hu6rc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect33" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 393.0
+offset_top = 463.0
+offset_right = 409.0
+offset_bottom = 479.0
+texture = ExtResource("281_kwh7b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect34" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 425.0
+offset_top = 463.0
+offset_right = 441.0
+offset_bottom = 479.0
+texture = ExtResource("282_ycs6o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect35" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 457.0
+offset_top = 463.0
+offset_right = 473.0
+offset_bottom = 479.0
+texture = ExtResource("283_glrk5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect36" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 489.0
+offset_top = 463.0
+offset_right = 505.0
+offset_bottom = 479.0
+texture = ExtResource("284_jtbq0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect37" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 521.0
+offset_top = 463.0
+offset_right = 537.0
+offset_bottom = 479.0
+texture = ExtResource("285_de6lv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect38" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 553.0
+offset_top = 463.0
+offset_right = 569.0
+offset_bottom = 479.0
+texture = ExtResource("286_cibhj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect39" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 585.0
+offset_top = 463.0
+offset_right = 601.0
+offset_bottom = 479.0
+texture = ExtResource("287_l3dwn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect40" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 617.0
+offset_top = 463.0
+offset_right = 633.0
+offset_bottom = 479.0
+texture = ExtResource("288_abkyd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect41" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 329.0
+offset_top = 495.0
+offset_right = 345.0
+offset_bottom = 511.0
+texture = ExtResource("289_ohkja")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect42" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 361.0
+offset_top = 495.0
+offset_right = 377.0
+offset_bottom = 511.0
+texture = ExtResource("290_d2uc3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect43" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 393.0
+offset_top = 495.0
+offset_right = 409.0
+offset_bottom = 511.0
+texture = ExtResource("291_dm2mr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect44" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 425.0
+offset_top = 495.0
+offset_right = 441.0
+offset_bottom = 511.0
+texture = ExtResource("292_ssxrh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect45" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 457.0
+offset_top = 495.0
+offset_right = 473.0
+offset_bottom = 511.0
+texture = ExtResource("293_gq3mm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect46" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 489.0
+offset_top = 495.0
+offset_right = 505.0
+offset_bottom = 511.0
+texture = ExtResource("294_rvljl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect47" type="TextureRect" parent="meterial"]
+custom_minimum_size = Vector2(16, 16)
+offset_left = 521.0
+offset_top = 495.0
+offset_right = 537.0
+offset_bottom = 511.0
+texture = ExtResource("295_gesk5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+offset_left = -331.0
+offset_top = -105.0
+offset_right = 1237.0
+offset_bottom = -79.0
+text = "武器描述请参考：https://baike.baidu.com/starmap/view?nodeId=6a0cd5ee200a6744038895be&lemmaTitle=%E9%94%A4&lemmaId=1957180&starMapFrom=lemma_starMap&fromModule=lemma_starMap"
+metadata/_edit_lock_ = true

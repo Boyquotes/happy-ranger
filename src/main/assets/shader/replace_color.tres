@@ -1,0 +1,27 @@
+[gd_resource type="Shader" format=3 uid="uid://bmhuw6htma0fm"]
+
+[resource]
+code = "shader_type canvas_item;
+
+// 是否启用
+uniform bool enabled = true;
+// 要替换的颜色
+uniform vec4 replace_color : source_color = vec4(1.0);
+// 替换成这个颜色
+uniform vec4 to_color : source_color = vec4(1.0);
+// 阈值
+uniform float threshold : hint_range(0.0, 1.0, 0.01) = 0.1;
+
+
+void fragment() {
+	
+	if (enabled){
+		vec4 color = COLOR;
+		vec4 diff = color - replace_color;
+		if( (abs(diff.r + diff.g + diff.b + diff.a) / 4.0) <= threshold && color.a != 0.0) {
+			COLOR = to_color;
+		}
+	}
+	
+}
+"

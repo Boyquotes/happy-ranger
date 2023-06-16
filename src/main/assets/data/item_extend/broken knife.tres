@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="BaseItemData" load_steps=3 format=3 uid="uid://dofrlxbyupu0y"]
+
+[ext_resource type="Script" path="res://src/main/assets/data/item/base_item_data.gd" id="1_6icug"]
+[ext_resource type="Texture2D" uid="uid://c56he06gg1aju" path="res://src/main/assets/texture/used/item/weapon/02/goblin_knife.png" id="2_6efnj"]
+
+[resource]
+script = ExtResource("1_6icug")
+texture = ExtResource("2_6efnj")
+item_type = 1
+name = "鸡肋小刀"
+description = "鸡肋的破烂小刀
+BROKEN_KNIFE"
+showed = true
+health = 0
+health_recovery = 0.0
+healing_rate = 0.0
+attack = 0.0
+attack_speed = 0.0
+attack_range = 10
+move_speed = 0
+jump_height = 0
+count = 1
+level = 1
+experience = 0
+functions = Array[Resource("res://src/main/assets/data/function/base_function.gd")]([])
+upgrades = Array[Resource("res://src/main/assets/data/item/upgrade_item_data.gd")]([])

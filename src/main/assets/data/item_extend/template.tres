@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BaseItemData" load_steps=2 format=3 uid="uid://bjeb3latjdqsl"]
+
+[ext_resource type="Script" path="res://src/main/assets/data/item/base_item_data.gd" id="1_ipvo5"]
+
+[resource]
+script = ExtResource("1_ipvo5")
+item_type = 0
+name = ""
+description = ""
+showed = true
+health = 0
+health_recovery = 0.0
+healing_rate = 0.0
+attack = 0.0
+attack_speed = 0.0
+attack_range = 10
+move_speed = 0
+jump_height = 0
+count = 1
+level = 0
+experience = 0
+functions = Array[Resource("res://src/main/assets/data/function/base_function.gd")]([])
+upgrades = Array[Resource("res://src/main/assets/data/item/upgrade_item_data.gd")]([])
